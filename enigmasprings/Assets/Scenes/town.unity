@@ -9123,6 +9123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  heroArray:
+  - {fileID: 6983202077367773121, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: 2165717997959944645, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: -484125075312390652, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: 4769582802073678384, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: 6973112104302177094, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: -7790536598922295408, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: 6880510811088228608, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: 1239997267041418887, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: 9041744707722229347, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: -2554558783982643705, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: -3143747720611569955, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
+  - {fileID: -1441367491989087567, guid: abfcfb689b742b949bc4a766718c6a55, type: 3}
 --- !u!61 &1688534759
 BoxCollider2D:
   m_ObjectHideFlags: 0
