@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Boundaries.cs" />
      <Compile Include="Assets\DialogueBox.cs" />
      <Compile Include="Assets\GameManagerScript.cs" />
      <Compile Include="Assets\PlayerManager.cs" />
