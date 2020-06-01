@@ -1,7 +1,343 @@
 fileFormatVersion: 2
 guid: 80e5ccf35b048714b952ce0eb5a7fc91
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 9049199832818575497
+    second: detective_sprite_by_willowwhips_dc5xcyw_0
+  - first:
+      213: 73232803786166420
+    second: detective_sprite_by_willowwhips_dc5xcyw_1
+  - first:
+      213: -5885588817582471956
+    second: detective_sprite_by_willowwhips_dc5xcyw_2
+  - first:
+      213: 4486760775166468459
+    second: detective_sprite_by_willowwhips_dc5xcyw_3
+  - first:
+      213: 2507035621558259838
+    second: detective_sprite_by_willowwhips_dc5xcyw_4
+  - first:
+      213: -1398860579596799241
+    second: detective_sprite_by_willowwhips_dc5xcyw_5
+  - first:
+      213: -2591486544967835436
+    second: detective_sprite_by_willowwhips_dc5xcyw_6
+  - first:
+      213: 8571429290491844374
+    second: detective_sprite_by_willowwhips_dc5xcyw_7
+  - first:
+      213: 5029053535225564962
+    second: detective_sprite_by_willowwhips_dc5xcyw_8
+  - first:
+      213: 7409898138551095260
+    second: detective_sprite_by_willowwhips_dc5xcyw_9
+  - first:
+      213: -8433929222906997082
+    second: detective_sprite_by_willowwhips_dc5xcyw_10
+  - first:
+      213: 8371037169705535581
+    second: detective_sprite_by_willowwhips_dc5xcyw_11
+  - first:
+      213: 201946142648916400
+    second: detective_sprite_by_willowwhips_dc5xcyw_12
+  - first:
+      213: 7758226262638429409
+    second: detective_sprite_by_willowwhips_dc5xcyw_13
+  - first:
+      213: -4920334869128594866
+    second: detective_sprite_by_willowwhips_dc5xcyw_14
+  - first:
+      213: 3890098840173620255
+    second: detective_sprite_by_willowwhips_dc5xcyw_15
+  - first:
+      213: 236145070586508563
+    second: detective_sprite_by_willowwhips_dc5xcyw_16
+  - first:
+      213: -9007657867891115651
+    second: detective_sprite_by_willowwhips_dc5xcyw_17
+  - first:
+      213: -4157180899690856223
+    second: detective_sprite_by_willowwhips_dc5xcyw_18
+  - first:
+      213: 5193542037648391830
+    second: detective_sprite_by_willowwhips_dc5xcyw_19
+  - first:
+      213: -5786980117408111380
+    second: detective_sprite_by_willowwhips_dc5xcyw_20
+  - first:
+      213: 8567767354643218930
+    second: detective_sprite_by_willowwhips_dc5xcyw_21
+  - first:
+      213: 3639270554659040128
+    second: detective_sprite_by_willowwhips_dc5xcyw_22
+  - first:
+      213: 6884882977285512179
+    second: detective_sprite_by_willowwhips_dc5xcyw_23
+  - first:
+      213: 6554991506356798889
+    second: detective_sprite_by_willowwhips_dc5xcyw_24
+  - first:
+      213: -5809708778862753290
+    second: detective_sprite_by_willowwhips_dc5xcyw_25
+  - first:
+      213: 8709580805943785875
+    second: detective_sprite_by_willowwhips_dc5xcyw_26
+  - first:
+      213: 6238882720924034022
+    second: detective_sprite_by_willowwhips_dc5xcyw_27
+  - first:
+      213: -784447034066179850
+    second: detective_sprite_by_willowwhips_dc5xcyw_28
+  - first:
+      213: 2471782810880877476
+    second: detective_sprite_by_willowwhips_dc5xcyw_29
+  - first:
+      213: 366334144967325451
+    second: detective_sprite_by_willowwhips_dc5xcyw_30
+  - first:
+      213: 3191556324738407392
+    second: detective_sprite_by_willowwhips_dc5xcyw_31
+  - first:
+      213: 6127354822592224360
+    second: detective_sprite_by_willowwhips_dc5xcyw_32
+  - first:
+      213: -7277388506665130189
+    second: detective_sprite_by_willowwhips_dc5xcyw_33
+  - first:
+      213: 440066920510339145
+    second: detective_sprite_by_willowwhips_dc5xcyw_34
+  - first:
+      213: -6099866244554664765
+    second: detective_sprite_by_willowwhips_dc5xcyw_35
+  - first:
+      213: 3317703410638785552
+    second: detective_sprite_by_willowwhips_dc5xcyw_36
+  - first:
+      213: -3396735977373070074
+    second: detective_sprite_by_willowwhips_dc5xcyw_37
+  - first:
+      213: -1007226567727023251
+    second: detective_sprite_by_willowwhips_dc5xcyw_38
+  - first:
+      213: 1595626796000992640
+    second: detective_sprite_by_willowwhips_dc5xcyw_39
+  - first:
+      213: 694959311241819054
+    second: detective_sprite_by_willowwhips_dc5xcyw_40
+  - first:
+      213: 2067971455609848929
+    second: detective_sprite_by_willowwhips_dc5xcyw_41
+  - first:
+      213: -5662597157495417068
+    second: detective_sprite_by_willowwhips_dc5xcyw_42
+  - first:
+      213: 7322252857961190863
+    second: detective_sprite_by_willowwhips_dc5xcyw_43
+  - first:
+      213: 4520519345606019092
+    second: detective_sprite_by_willowwhips_dc5xcyw_44
+  - first:
+      213: 104534325025593852
+    second: detective_sprite_by_willowwhips_dc5xcyw_45
+  - first:
+      213: 3535607326074173599
+    second: detective_sprite_by_willowwhips_dc5xcyw_46
+  - first:
+      213: -6790875835086725294
+    second: detective_sprite_by_willowwhips_dc5xcyw_47
+  - first:
+      213: -6665638582133590482
+    second: detective_sprite_by_willowwhips_dc5xcyw_48
+  - first:
+      213: -2328833603195430993
+    second: detective_sprite_by_willowwhips_dc5xcyw_49
+  - first:
+      213: -3621041063284495705
+    second: detective_sprite_by_willowwhips_dc5xcyw_50
+  - first:
+      213: -2578329515645748143
+    second: detective_sprite_by_willowwhips_dc5xcyw_51
+  - first:
+      213: -7764140240265826591
+    second: detective_sprite_by_willowwhips_dc5xcyw_52
+  - first:
+      213: 2094646809070118839
+    second: detective_sprite_by_willowwhips_dc5xcyw_53
+  - first:
+      213: -9075929480626691454
+    second: detective_sprite_by_willowwhips_dc5xcyw_54
+  - first:
+      213: 6726962638108960058
+    second: detective_sprite_by_willowwhips_dc5xcyw_55
+  - first:
+      213: -5804198913381403325
+    second: detective_sprite_by_willowwhips_dc5xcyw_56
+  - first:
+      213: -5391124692911101345
+    second: detective_sprite_by_willowwhips_dc5xcyw_57
+  - first:
+      213: -4829934828346142243
+    second: detective_sprite_by_willowwhips_dc5xcyw_58
+  - first:
+      213: 2839342412184275202
+    second: detective_sprite_by_willowwhips_dc5xcyw_59
+  - first:
+      213: 39915274367731788
+    second: detective_sprite_by_willowwhips_dc5xcyw_60
+  - first:
+      213: 8437886916045761357
+    second: detective_sprite_by_willowwhips_dc5xcyw_61
+  - first:
+      213: -5453094835294719951
+    second: detective_sprite_by_willowwhips_dc5xcyw_62
+  - first:
+      213: 193679090565465157
+    second: detective_sprite_by_willowwhips_dc5xcyw_63
+  - first:
+      213: -1894115624425461401
+    second: detective_sprite_by_willowwhips_dc5xcyw_64
+  - first:
+      213: -2245381847572065166
+    second: detective_sprite_by_willowwhips_dc5xcyw_65
+  - first:
+      213: -7445577453631183919
+    second: detective_sprite_by_willowwhips_dc5xcyw_66
+  - first:
+      213: 7896829807712820821
+    second: detective_sprite_by_willowwhips_dc5xcyw_67
+  - first:
+      213: -1850625882971064098
+    second: detective_sprite_by_willowwhips_dc5xcyw_68
+  - first:
+      213: 5910998274405596404
+    second: detective_sprite_by_willowwhips_dc5xcyw_69
+  - first:
+      213: -1149016298801082076
+    second: detective_sprite_by_willowwhips_dc5xcyw_70
+  - first:
+      213: 2021954552572581964
+    second: detective_sprite_by_willowwhips_dc5xcyw_71
+  - first:
+      213: -7427877209822300822
+    second: detective_sprite_by_willowwhips_dc5xcyw_72
+  - first:
+      213: 8003468302273781000
+    second: detective_sprite_by_willowwhips_dc5xcyw_73
+  - first:
+      213: 5340689193108510783
+    second: detective_sprite_by_willowwhips_dc5xcyw_74
+  - first:
+      213: 8904134610154731044
+    second: detective_sprite_by_willowwhips_dc5xcyw_75
+  - first:
+      213: -746476462788546752
+    second: detective_sprite_by_willowwhips_dc5xcyw_76
+  - first:
+      213: 2257865138893796665
+    second: detective_sprite_by_willowwhips_dc5xcyw_77
+  - first:
+      213: 7901424556271925368
+    second: detective_sprite_by_willowwhips_dc5xcyw_78
+  - first:
+      213: -4569139329072148848
+    second: detective_sprite_by_willowwhips_dc5xcyw_79
+  - first:
+      213: -1301455588345189556
+    second: detective_sprite_by_willowwhips_dc5xcyw_80
+  - first:
+      213: -4105813873165224512
+    second: detective_sprite_by_willowwhips_dc5xcyw_81
+  - first:
+      213: 7290600330998049204
+    second: detective_sprite_by_willowwhips_dc5xcyw_82
+  - first:
+      213: 6407113311917443050
+    second: detective_sprite_by_willowwhips_dc5xcyw_83
+  - first:
+      213: -3535915326675797446
+    second: detective_sprite_by_willowwhips_dc5xcyw_84
+  - first:
+      213: -7395278800404537299
+    second: detective_sprite_by_willowwhips_dc5xcyw_85
+  - first:
+      213: 5018976887950650780
+    second: detective_sprite_by_willowwhips_dc5xcyw_86
+  - first:
+      213: 5248636599000593693
+    second: detective_sprite_by_willowwhips_dc5xcyw_87
+  - first:
+      213: -9090740834395686477
+    second: detective_sprite_by_willowwhips_dc5xcyw_88
+  - first:
+      213: 6423320429807421802
+    second: detective_sprite_by_willowwhips_dc5xcyw_89
+  - first:
+      213: -823401150131130613
+    second: detective_sprite_by_willowwhips_dc5xcyw_90
+  - first:
+      213: -6282669125730562192
+    second: detective_sprite_by_willowwhips_dc5xcyw_91
+  - first:
+      213: -2155197497947254306
+    second: detective_sprite_by_willowwhips_dc5xcyw_92
+  - first:
+      213: -4694112057667472422
+    second: detective_sprite_by_willowwhips_dc5xcyw_93
+  - first:
+      213: -6591924673695989491
+    second: detective_sprite_by_willowwhips_dc5xcyw_94
+  - first:
+      213: -1721618326800092303
+    second: detective_sprite_by_willowwhips_dc5xcyw_95
+  - first:
+      213: -7799497518894600582
+    second: detective_sprite_by_willowwhips_dc5xcyw_0
+  - first:
+      213: -2062548462055653513
+    second: detective_sprite_by_willowwhips_dc5xcyw_1
+  - first:
+      213: 3902836555684587135
+    second: detective_sprite_by_willowwhips_dc5xcyw_2
+  - first:
+      213: -7592349599205789022
+    second: detective_sprite_by_willowwhips_dc5xcyw_3
+  - first:
+      213: 2963724442070604664
+    second: detective_sprite_by_willowwhips_dc5xcyw_4
+  - first:
+      213: -7299309200441738833
+    second: detective_sprite_by_willowwhips_dc5xcyw_5
+  - first:
+      213: -3861400842196324565
+    second: detective_sprite_by_willowwhips_dc5xcyw_6
+  - first:
+      213: 7375544328916050535
+    second: detective_sprite_by_willowwhips_dc5xcyw_7
+  - first:
+      213: -2067084506192763393
+    second: detective_sprite_by_willowwhips_dc5xcyw_8
+  - first:
+      213: -5303499748856852904
+    second: detective_sprite_by_willowwhips_dc5xcyw_9
+  - first:
+      213: -8892127222253298270
+    second: detective_sprite_by_willowwhips_dc5xcyw_10
+  - first:
+      213: 8219409934527322642
+    second: detective_sprite_by_willowwhips_dc5xcyw_11
+  - first:
+      213: -2956352544019871535
+    second: detective_sprite_by_willowwhips_dc5xcyw_12
+  - first:
+      213: -3156896295141063024
+    second: detective_sprite_by_willowwhips_dc5xcyw_13
+  - first:
+      213: -2999561330431694154
+    second: detective_sprite_by_willowwhips_dc5xcyw_14
+  - first:
+      213: -3641320164194367756
+    second: detective_sprite_by_willowwhips_dc5xcyw_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +376,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +407,357 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 146
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e2fbf745e92c390800000000000000
+      internalID: -7799497518894600582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 146
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ff4230a1b5063e0800000000000000
+      internalID: -2062548462055653513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 146
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f762df55b29a92630800000000000000
+      internalID: 3902836555684587135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 146
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a272c8f34e82a690800000000000000
+      internalID: -7592349599205789022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 98
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87bd2c57da3412920800000000000000
+      internalID: 2963724442070604664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_5
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 98
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9fde1a4f4a3ba90800000000000000
+      internalID: -7299309200441738833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 98
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f6e71846c896ac0800000000000000
+      internalID: -3861400842196324565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_7
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 98
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76220366d723b5660800000000000000
+      internalID: 7375544328916050535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 50
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5aaafe79d3053e0800000000000000
+      internalID: -2067084506192763393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 50
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e830bd31f2666b0800000000000000
+      internalID: -5303499748856852904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 50
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2add2046761d89480800000000000000
+      internalID: -8892127222253298270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 50
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a51d289c5311270800000000000000
+      internalID: 8219409934527322642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d88fde460de8f6d0800000000000000
+      internalID: -2956352544019871535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096ce57ab837034d0800000000000000
+      internalID: -3156896295141063024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6baee91ccda6f56d0800000000000000
+      internalID: -2999561330431694154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: detective_sprite_by_willowwhips_dc5xcyw_15
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 2
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f64abb6a9e677dc0800000000000000
+      internalID: -3641320164194367756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
