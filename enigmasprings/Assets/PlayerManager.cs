@@ -27,14 +27,14 @@ public class PlayerManager : MonoBehaviour
 
 
         }
-        else if (Input.GetKey(KeyCode.DownArrow)  ||  Input.GetKey(KeyCode.A)){
+        else if (Input.GetKey(KeyCode.DownArrow)  ||  Input.GetKey(KeyCode.S)){
             sR.flipX = false;
             animator.SetInteger("direction", 2);
             transform.Translate(Vector3.down * Time.deltaTime * speed);
             mainCamera.transform.Translate(Vector3.down * Time.deltaTime * speed);
 
         }
-        else if (Input.GetKey(KeyCode.LeftArrow)  ||  Input.GetKey(KeyCode.S)) {
+        else if (Input.GetKey(KeyCode.LeftArrow)  ||  Input.GetKey(KeyCode.A)) {
             animator.SetInteger("direction", 3);
             sR.flipX = false;
             transform.Translate(Vector3.left * Time.deltaTime * speed);
@@ -49,6 +49,7 @@ public class PlayerManager : MonoBehaviour
         }
         else {
             animator.SetInteger("direction", 0);
+            sR.sprite = heroArray[animator.GetInteger("direction")];
         }
     }
 }
