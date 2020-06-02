@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     private SpriteRenderer sR;
     public Sprite[] heroArray;
     public Camera mainCamera;
+    public Animator animator;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow)  ||  Input.GetKey(KeyCode.W)) {
             sR.flipX = false;
-            sR.sprite = heroArray[3];
+            animator.SetInteger("direction", 1);
             transform.Translate(Vector3.up * Time.deltaTime * speed);
             mainCamera.transform.Translate(Vector3.up * Time.deltaTime * speed);
 
@@ -28,23 +29,26 @@ public class PlayerManager : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.DownArrow)  ||  Input.GetKey(KeyCode.A)){
             sR.flipX = false;
-            sR.sprite = heroArray[7];
+            animator.SetInteger("direction", 2);
             transform.Translate(Vector3.down * Time.deltaTime * speed);
             mainCamera.transform.Translate(Vector3.down * Time.deltaTime * speed);
 
         }
         else if (Input.GetKey(KeyCode.LeftArrow)  ||  Input.GetKey(KeyCode.S)) {
-            sR.sprite = heroArray[0];
+            animator.SetInteger("direction", 3);
             sR.flipX = false;
             transform.Translate(Vector3.left * Time.deltaTime * speed);
             mainCamera.transform.Translate(Vector3.left * Time.deltaTime * speed);
 
         }
         else if (Input.GetKey(KeyCode.RightArrow)  ||  Input.GetKey(KeyCode.D)) {
-            sR.sprite = heroArray[1];
+            animator.SetInteger("direction", 3);
             sR.flipX = true;
             mainCamera.transform.Translate(Vector3.right * Time.deltaTime * speed);
             transform.Translate(Vector3.right * Time.deltaTime * speed);
+        }
+        else {
+            animator.SetInteger("direction", 0);
         }
     }
 }
