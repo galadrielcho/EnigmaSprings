@@ -9,6 +9,8 @@ public class DialogueBox : MonoBehaviour
     public string speaker;
     [TextArea(8,3)]
     public string[] dialogues = new string[5];
+    public Transform player;
+    public GameObject uiCanv;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class DialogueBox : MonoBehaviour
     }
 
     // Can/will be replaced by whatever code we use to show that something has interacted with the player.
-    void OnMouseDown(){
+    void Speak(){
 
         // Checks to make sure no one else is already talking.
         if (!GameManagerScript.speaking)
@@ -32,6 +34,24 @@ public class DialogueBox : MonoBehaviour
             }
 
 
+
+    }
+    void Update()
+    {
+
+        float dist = Vector3.Distance(player.position, transform.position);
+
+        if (dist < 2 && Input.GetKeyDown("e")) {
+            Speak();
+        }
+        else if (dist < 2)
+        {
+            uiCanv.SetActive(true);
+        }
+        else
+        {
+            uiCanv.SetActive(false);
+        }
 
     }
 

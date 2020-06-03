@@ -11,13 +11,12 @@ public class PlayerManager : MonoBehaviour
     public Camera mainCamera;
     public Animator animator;
 
-    private bool isTouching = false;
-
     void Start()
     {
         sR = GetComponent<SpriteRenderer>();
 
     }
+
 
     void FixedUpdate()
     {
