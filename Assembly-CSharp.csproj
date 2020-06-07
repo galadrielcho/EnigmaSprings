@@ -59,7 +59,6 @@
      <Compile Include="Assets\DialogueBox.cs" />
      <Compile Include="Assets\GameManagerScript.cs" />
      <Compile Include="Assets\PlayerManager.cs" />
-     <Compile Include="Assets\ProximityChat.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

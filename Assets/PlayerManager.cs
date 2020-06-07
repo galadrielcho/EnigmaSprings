@@ -10,7 +10,6 @@ public class PlayerManager : MonoBehaviour
     public Sprite[] heroArray;
     public Camera mainCamera;
     public Animator animator;
-
     void Start()
     {
         sR = GetComponent<SpriteRenderer>();
@@ -20,12 +19,10 @@ public class PlayerManager : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        
         if (Input.GetKey(KeyCode.UpArrow)  ||  Input.GetKey(KeyCode.W)) {
-        sR.flipX = false;
-        animator.SetInteger("direction", 1);
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
+            sR.flipX = false;
+            animator.SetInteger("direction", 1);
+            transform.Translate(Vector3.up * Time.deltaTime * speed);
 
     }       
         else if (Input.GetKey(KeyCode.DownArrow)  ||  Input.GetKey(KeyCode.S)){
