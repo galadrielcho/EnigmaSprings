@@ -55,7 +55,14 @@ public class DialogueBox : MonoBehaviour
                 popup.transform.position = transform.position;
                 popup.transform.Translate(Vector3.up);
                 popup.SetActive(true);
-                yield return new WaitUntil(() => dist > 2);
+                while (dist < 2) {
+                    if (dist < 2 && Input.GetKeyDown("e")) {
+                        Speak();
+                        popup.SetActive(false);
+
+                    }
+                    yield return null;
+                }
                 popup.SetActive(false);
             }
                 yield return null;
