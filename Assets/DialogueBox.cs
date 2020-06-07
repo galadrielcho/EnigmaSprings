@@ -80,7 +80,7 @@ public class DialogueBox : MonoBehaviour
             // The $ is used as a newbox (like newline) character.
             // If $ - clear box
             if (c == '$') {
-                yield return new WaitUntil(() => Input.GetMouseButtonDown(0)); // Wait for mouseclick on screen
+                yield return new WaitUntil(() => Input.GetKeyDown("space")); // Wait for mouseclick on screen
                 txt = "";
                 GameManagerScript.dialogue.text = txt;
             }
@@ -94,7 +94,7 @@ public class DialogueBox : MonoBehaviour
         }
 
         //Wait for mouseclick on screen to end.
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        yield return new WaitUntil(() => Input.GetKeyDown("space"));
 
         // Clears everything. 
         GameManagerScript.speaker.text = "";
