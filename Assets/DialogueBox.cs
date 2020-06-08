@@ -86,7 +86,7 @@ public class DialogueBox : MonoBehaviour
             }
             else {     
                 if (c != ' ')
-                    yield return new WaitForSeconds(.05f); 
+                    yield return new WaitForSeconds(.07f); 
                 txt += c;
                 GameManagerScript.dialogue.text = txt;
                 // add char to textbox.
