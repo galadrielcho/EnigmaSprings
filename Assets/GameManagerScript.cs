@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public static int day=1;
+    public static int day=0;
         
     
     // Static variables cannot be assigned in inspector - so we have dummy variables here.
