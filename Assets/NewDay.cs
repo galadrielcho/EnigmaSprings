@@ -16,10 +16,10 @@ public class NewDay : MonoBehaviour
     void Start() {
         night.enabled = true; //Makes the start screen black.
 
-        string txt = "Welcome to Enigma Springs, a quiet mining town. After the mine owner," +
-        " Richard Hawthorne, was found murdered, unrest has risen among the townspeople." +
-        " Talk to them as Detective Eman, and gather clues!" +
-        " After 5 days, you must decide the culprit. Good luck!"; //store intro text
+        string txt = "Welcome to Enigma Springs,\na quiet mining town. After the mine owner,\n" +
+        " Richard Hawthorne, was found murdered,\nunrest has risen among the townspeople.\n" +
+        " Talk to them as Detective Eman, and\n gather clues!" +
+        " After 5 days, you must\n decide the culprit. Good luck!"; //store intro text
 
 
         StartCoroutine(Type(txt, IntroText, true)); //Intro text is typed on screen
@@ -52,7 +52,7 @@ public class NewDay : MonoBehaviour
 
         if (fade) {
             // Black background disappears
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             StartCoroutine("FadeOut", true);
         }
 
