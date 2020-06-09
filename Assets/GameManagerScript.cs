@@ -27,7 +27,6 @@ public class GameManagerScript : MonoBehaviour
         dialogue = field_dialogue;
         speaker = field_speaker;
         textbox = field_textbox;
- 
     }
  
     public static void ClearTextbox() {
