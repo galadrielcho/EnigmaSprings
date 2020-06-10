@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e827598a187af478ac5cda30b56351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: 
+  speaker: Tommy Carter
   dialogues:
   - "FOR THE LAST TIME, I\u2019M NOT INTERESTED IN YOUR TURNIPS, MRS. HOFFMAN!\r\n$...
     oh, you\u2019re not that crazy woman. Who in the world are you?\r\n$You wanna
@@ -581,8 +581,8 @@ MonoBehaviour:
   - 
   - 
   - 
-  player: {fileID: 0}
-  popup: {fileID: 0}
+  player: {fileID: 1688534761}
+  popup: {fileID: 2129214081}
 --- !u!4 &259624157
 Transform:
   m_ObjectHideFlags: 0
