@@ -36,6 +36,10 @@ public class GameManagerScript : MonoBehaviour
         dialogue.text = "";
         textbox.SetActive(false);
     }
+
+    public static void selectKiller() {
+        
+    }
  
  
 }

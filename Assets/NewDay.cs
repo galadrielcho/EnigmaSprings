@@ -109,8 +109,9 @@ public class NewDay : MonoBehaviour
             yield return null;
         }
 
-        if (GameManagerScript.day != 5){ // no new day update on day 5
-            StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
+        StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
+        if (GameManagerScript.day == 5) {
+            GameManagerScript.selectKiller();
         }
 
     }
