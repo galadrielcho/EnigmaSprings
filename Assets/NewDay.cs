@@ -11,7 +11,6 @@ public class NewDay : MonoBehaviour
     public TextMeshProUGUI SystemText;
     public TextMeshProUGUI DayText;
 
-    private static Coroutine co;
     private float t = 0;
     
     // Update is called once per frame
@@ -35,6 +34,8 @@ public class NewDay : MonoBehaviour
         if(GameManagerScript.speaking && Input.GetKeyDown("y") && Vector3.Distance(player.position, transform.position) < 2) {
             GameManagerScript.ClearTextbox();
             StartCoroutine("FadeIn"); //screen turns black
+            StopCoroutine(DialogueBox.co);
+
         }
     }
 
