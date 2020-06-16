@@ -12,14 +12,12 @@ public class NewDay : MonoBehaviour
     public SpriteRenderer night;
     public TextMeshProUGUI SystemText;
     public TextMeshProUGUI DayText;
-    public GameObject killerSelect;
 
 
     private float t = 0;
     
     // Update is called once per frame
     void Start() {
-        killerSelect.SetActive(false);
         night.enabled = true; //Makes the start screen black.
 
         string txt = "Welcome to Enigma Springs,\na quiet mining town. After the mine owner,\n" +
@@ -120,17 +118,6 @@ public class NewDay : MonoBehaviour
         }
 
     }
-
-
-    
-    IEnumerator getPlayerChoice(){
-        killerSelect.SetActive(true);
-        yield return new WaitUntil(() => GameManagerScript.suspectChoice != "");
-        Debug.Log("BB");
-
-        yield return null;
-    }
- 
 }
 
 
