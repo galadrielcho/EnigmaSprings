@@ -8,8 +8,10 @@ public class NewDay : MonoBehaviour
 
     public Transform player;
     public SpriteRenderer night;
-    public TextMeshProUGUI IntroText;
-    public TextMeshProUGUI DayText; 
+    public TextMeshProUGUI SystemText;
+    public TextMeshProUGUI DayText;
+
+    private static Coroutine co;
     private float t = 0;
     
     // Update is called once per frame
@@ -22,8 +24,8 @@ public class NewDay : MonoBehaviour
         " After 5 days, you must\n decide the culprit. Good luck!"; //store intro text
 
 
-        StartCoroutine(Type(txt, IntroText, true)); //Intro text is typed on screen
-        // txt = what is typed. IntroText = the textbox used true = tells function part of intro
+        StartCoroutine(Type(txt, SystemText, true)); //Intro text is typed on screen
+        // txt = what is typed. SystemText = the textbox used true = tells function part of intro
     }
 
     void Update()
@@ -41,7 +43,6 @@ public class NewDay : MonoBehaviour
     // fade: whether black bg disappears or not
     IEnumerator Type(string txt, TextMeshProUGUI txtbox, bool fade) {
         string typed = "";
-
         // Adds each char to dialogue with split second pause
         foreach (char c in txt) {
             typed += c;
@@ -50,8 +51,8 @@ public class NewDay : MonoBehaviour
         }
 
 
+        // text and/or related black bg fade
         if (fade) {
-            // Black background disappears
             yield return new WaitForSeconds(3f);
             StartCoroutine("FadeOut", true);
         }
@@ -72,35 +73,44 @@ public class NewDay : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine("FadeOut", false); // fade out 
+        GameManagerScript.speaking = false; 
+        GameManagerScript.day += 1; //Changed to next day
+        
+        if (GameManagerScript.day == 5)
+        {
+            string lastdaytext = "Your time in Enigma Springs has come to an end.\n    You must pick the killer.\n             Choose wisely,\nThe town is counting on you...";
+            SystemText.text = "";
+            SystemText.color = new Color(1, 1, 1, 1);
+            StartCoroutine(Type(lastdaytext, SystemText, true));
+        }
+        else {
+            StartCoroutine("FadeOut", false); // fade out 
 
-
+        }
     }
 
     // Black background fades out over screen
-    // intro - whether to fade out intro text or not
-    IEnumerator FadeOut(bool intro) {
-        GameManagerScript.speaking = false; 
-        GameManagerScript.day += 1; //Changed to next day
-
+    // intro - whether to fade out systemtext or not
+    IEnumerator FadeOut(bool systemtext) {
         t = 0; //Reset counter
-
-
         while(t< 2f) {
             t += Time.deltaTime;
 
-            float alpha = Mathf.Lerp(1,0,t/2f);
-            night.color = new Color(0, 0, 0, alpha);
 
-            if (intro) { //fade out intro text as well
-                IntroText.color = new Color(1, 1, 1, alpha);
+            float alpha = Mathf.Lerp(1,0,t/2f);
+            if (systemtext){
+                SystemText.color = new Color(1, 1, 1, alpha); // Intro system text fades out
             }
-    
+            if (GameManagerScript.day != 5) { //If it's the last day, prevent the black bg from fading out
+                night.color = new Color(0, 0, 0, alpha);
+                //Type out Day text
+            }    
             yield return null;
         }
 
-        //Type out Day text
-        StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
+        if (GameManagerScript.day != 5){ // no new day update on day 5
+            StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
+        }
 
     }
 } 
