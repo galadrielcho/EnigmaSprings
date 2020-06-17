@@ -8,22 +8,42 @@ public class GameOver : MonoBehaviour
     public TextMeshProUGUI gameOverTextbox; 
     public TextMeshProUGUI winLoseTextbox; 
     
+    public List<SpriteRenderer> characters = new List<SpriteRenderer>();
 
     private SpriteRenderer sr;
   
     // Start is called before the first frame update
     void Start()
     {
+
         sr = GetComponent<SpriteRenderer>();
         StartCoroutine("endGame");
         winLoseTextbox.text = "";
 
     }
 
+
     IEnumerator endGame(){
-        yield return new WaitUntil(()=> SuspectSelect.suspectChoice != "");
         float t = 0; // time counter
 
+        //fade in each suspect, one at a time
+        foreach (SpriteRenderer sr in  characters) {
+            t = 0;
+            while(t<.5f){
+
+                t += Time.deltaTime; // time passed added to counter
+                float alpha = Mathf.Lerp(0, 1,t/.5f);
+                sr.color = new Color(1, 1, 1, alpha); 
+                yield return null;
+
+            }
+
+            yield return new WaitForSeconds (.05f);
+        }
+
+        yield return new WaitUntil(()=> SuspectSelect.suspectChoice != "");
+      
+        t = 0; // time counter
         while(t< 3f) // limit duration to  2 seconds
         {
             t += Time.deltaTime; // time passed added to counter
