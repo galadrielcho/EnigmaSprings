@@ -12,7 +12,7 @@ public class NewDay : MonoBehaviour
     public SpriteRenderer night;
     public TextMeshProUGUI SystemText;
     public TextMeshProUGUI DayText;
-
+    public AudioSource music;
 
     private float t = 0;
     
@@ -85,6 +85,7 @@ public class NewDay : MonoBehaviour
             string lastdaytext = "Your time in Enigma Springs has come to an end.\n    You must pick the killer.\n             Choose wisely,\nThe town is counting on you...";
             SystemText.text = "";
             SystemText.color = new Color(1, 1, 1, 1);
+            StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
             StartCoroutine(Type(lastdaytext, SystemText, true));
         }
         else {
@@ -107,14 +108,24 @@ public class NewDay : MonoBehaviour
             }
             if (GameManagerScript.day != 5) { //If it's the last day, prevent the black bg from fading out
                 night.color = new Color(0, 0, 0, alpha);
-                //Type out Day text
             }    
             yield return null;
         }
-
-        StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
         if (GameManagerScript.day == 5) {
+
+            t = 0; 
+            while(t< 2f) {
+                t += Time.deltaTime;
+                music.volume = Mathf.Lerp(.239f, 0, t/2f);
+                yield return null;
+            }
+
+            float alpha = Mathf.Lerp(1,0,t/2f);
             SceneManager.LoadScene("KillerSelect");
+        }
+        else {
+            StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
+
         }
 
     }
