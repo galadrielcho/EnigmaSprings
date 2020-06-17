@@ -5,7 +5,7 @@ using UnityEngine;
 public class SuspectSelect : MonoBehaviour
 {
 
-    public AudioSource click;
+    
     static public string suspectChoice = "";
     // Start is called before the first frame update
     private SpriteRenderer sr;
@@ -19,14 +19,31 @@ public class SuspectSelect : MonoBehaviour
     }
 
     void OnMouseEnter()
-    {
-        click.Play();
-        sr.color = new Color(1, 1, 1, .7f); 
+    { 
+        if (suspectChoice == "") {
+            GameOver.click.Play();
+            GameOver.nameTextbox.text = name;
+            sr.color = new Color(1, 1, 1, .7f); 
+        }
+        
+    }
+
+    void OnMouseOver() {
+        if (suspectChoice == "") {
+            GameOver.nameTransform.position = Input.mousePosition;
+        }
+        else {
+            GameOver.nameTextbox.text = "";
+
+        }
+
     }
 
     void OnMouseExit()
     {
         sr.color = new Color(1, 1, 1, 1); 
+        GameOver.nameTextbox.text = "";
+
     }
 
 }
