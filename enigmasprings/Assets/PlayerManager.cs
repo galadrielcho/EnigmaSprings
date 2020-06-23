@@ -10,46 +10,64 @@ public class PlayerManager : MonoBehaviour
     public Sprite[] heroArray;
     public Camera mainCamera;
     public Animator animator;
-
     void Start()
     {
         sR = GetComponent<SpriteRenderer>();
+   
 
     }
 
+
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.UpArrow)  ||  Input.GetKey(KeyCode.W)) {
-            sR.flipX = false;
-            animator.SetInteger("direction", 1);
-            transform.Translate(Vector3.up * Time.deltaTime * speed);
-            mainCamera.transform.Translate(Vector3.up * Time.deltaTime * speed);
 
+        if (!GameManagerScript.speaking) {
+            animator.speed = 1;
+            // F speeds up player
+            if (Input.GetKey(KeyCode.F)) {
+                    speed = 10f;
+                }
+            else {
+                speed = 3f;
+            }
+            // Player moves and looks up if up arrow or 'w' key is hit
 
-        }
-        else if (Input.GetKey(KeyCode.DownArrow)  ||  Input.GetKey(KeyCode.S)){
-            sR.flipX = false;
-            animator.SetInteger("direction", 2);
-            transform.Translate(Vector3.down * Time.deltaTime * speed);
-            mainCamera.transform.Translate(Vector3.down * Time.deltaTime * speed);
+            if (Input.GetKey(KeyCode.UpArrow)  ||  Input.GetKey(KeyCode.W)) {
+                    sR.flipX = false;
+                    animator.SetInteger("direction", 1);
+                    transform.Translate(Vector3.up * Time.deltaTime * speed);
+                }
+            // Player moves and looks down if down arrow or 's' key is hit   
+            else if (Input.GetKey(KeyCode.DownArrow)  ||  Input.GetKey(KeyCode.S)){
+                    sR.flipX = false;
+                    animator.SetInteger("direction", 2);
+                    transform.Translate(Vector3.down * Time.deltaTime * speed);
+                }
+            // Player moves and looks left if left arrow or 'a' key is hit   
+            else if (Input.GetKey(KeyCode.LeftArrow)  ||  Input.GetKey(KeyCode.A)) {
+                    sR.flipX = false;
+                    animator.SetInteger("direction", 3);
+                    transform.Translate(Vector3.left * Time.deltaTime * speed); 
+                    }
+            // Player moves and looks right if right arrow or 'd' key is hit   
+            else if (Input.GetKey(KeyCode.RightArrow)  ||  Input.GetKey(KeyCode.D)) {
+                    animator.SetInteger("direction", 3);
+                    sR.flipX = true;
+                    transform.Translate(Vector3.right * Time.deltaTime * speed); 
 
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow)  ||  Input.GetKey(KeyCode.A)) {
-            animator.SetInteger("direction", 3);
-            sR.flipX = false;
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
-            mainCamera.transform.Translate(Vector3.left * Time.deltaTime * speed);
+                }
+            else {
+                    animator.SetInteger("direction", 0);
+                    int direction = animator.GetInteger("direction");
+                    animator.speed = 0;
+                    sR.sprite = heroArray[direction];
 
+                }
+            
+
+        } else {
+            animator.speed = 0;
         }
-        else if (Input.GetKey(KeyCode.RightArrow)  ||  Input.GetKey(KeyCode.D)) {
-            animator.SetInteger("direction", 3);
-            sR.flipX = true;
-            mainCamera.transform.Translate(Vector3.right * Time.deltaTime * speed);
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
-        }
-        else {
-            animator.SetInteger("direction", 0);
-            sR.sprite = heroArray[animator.GetInteger("direction")];
-        }
+        
     }
 }
