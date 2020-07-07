@@ -16,15 +16,19 @@ public class GameManagerScript : MonoBehaviour
     public static TextMeshProUGUI dialogue; 
     public static TextMeshProUGUI speaker; 
     public static GameObject textbox;
-
+    public static RaycastHit2D hitInfo;
     public static string suspectChoice = "";
  
     // Used to make sure no more than one person is using the textbox at a time.
     public static bool speaking = false;
+
+    private Vector3 touchPosWorld;
+
  
     // Start is called before the first frame update
     void Start()
     {
+        hitInfo =  Physics2D.Raycast(new Vector2(0f,0f), Camera.main.transform.forward);
         // Dummy variables are replaced
         dialogue = field_dialogue;
         speaker = field_speaker;
@@ -37,6 +41,13 @@ public class GameManagerScript : MonoBehaviour
         speaker.text = "";
         dialogue.text = "";
         textbox.SetActive(false);
+    }
+
+    void Update() {
+        // Fire raycast at touch position
+        touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+        Vector2 touchPosWorld2D= new Vector2(touchPosWorld.x, touchPosWorld.y);
+        hitInfo = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
     }
 }
 

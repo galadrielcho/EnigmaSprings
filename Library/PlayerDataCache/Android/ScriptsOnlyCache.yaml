@@ -531,7 +531,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: d3008408b7f1ae23e3bbd4e6b4cccb14
+      Hash: 36ebac7c851c6ac14057c9c094d3dc68
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DialogueBox

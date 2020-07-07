@@ -10,7 +10,6 @@ public class PlayerManager : MonoBehaviour
     public Sprite[] heroArray;
     public Camera mainCamera;
     public Animator animator;
-    private Vector3 touchPosWorld;
     private string touchedObject;
 
     void Start()
@@ -28,15 +27,10 @@ public class PlayerManager : MonoBehaviour
         if (!GameManagerScript.speaking && Input.touchCount > 0 ) {
             animator.speed = 1;
 
-            // Fire raycast at touch position
-            touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-            Vector2 touchPosWorld2D= new Vector2(touchPosWorld.x, touchPosWorld.y);
-            RaycastHit2D hitInfo = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-
 
             // detect if raycast hit a movement control button collider
-            if (hitInfo.collider != null){    
-                touchedObject = hitInfo.collider.name;
+            if (GameManagerScript.hitInfo.collider != null){    
+                touchedObject = GameManagerScript.hitInfo.collider.name;
 
                 // Player moves and looks up if up button is touched
                 if (touchedObject == "up") {

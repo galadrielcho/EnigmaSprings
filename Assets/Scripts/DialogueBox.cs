@@ -14,6 +14,7 @@ public class DialogueBox : MonoBehaviour
     private float dist;
     public static Coroutine co;
     private bool stop = false;
+    public GameObject interactor;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,7 @@ public class DialogueBox : MonoBehaviour
 
     IEnumerator ProximityCheck() {
         while (true){
-            if (dist < 2 && Input.GetKeyDown("e")) {
+            if (dist < 2 && (GameManagerScript.hitInfo.collider.name == "selector")) {
                 Speak();
             }
             else if (dist < 2)
@@ -54,14 +55,18 @@ public class DialogueBox : MonoBehaviour
                 popup.transform.position = transform.position;
                 popup.transform.Translate(Vector3.up);
                 popup.SetActive(true);
+                interactor.SetActive(true);
+
                 while (dist < 2) {
-                    if (dist < 2 && (Input.GetKeyDown("e"))) {
+                    if (dist < 2 && (GameManagerScript.hitInfo.collider.name == "selector")) {
                         Speak();
                         popup.SetActive(false);
+                        interactor.SetActive(false);
 
                     }
                     yield return null;
                 }
+                interactor.SetActive(false);
                 popup.SetActive(false);
             }
                 yield return null;
