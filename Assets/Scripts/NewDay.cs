@@ -14,6 +14,7 @@ public class NewDay : MonoBehaviour
     public TextMeshProUGUI DayText;
     public AudioSource music;
     public TextMeshProUGUI skip;
+    public GameObject movementController;
 
     private float t = 0;
     private bool stop = false;
@@ -67,6 +68,7 @@ public class NewDay : MonoBehaviour
             yield return new WaitForSeconds(1f);
             StartCoroutine("FadeOut", true);
         }
+
         stop = false;
         skip.text="";
 
