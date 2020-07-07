@@ -13,6 +13,7 @@ public class DialogueBox : MonoBehaviour
     public GameObject popup;
     private float dist;
     public static Coroutine co;
+    private bool stop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class DialogueBox : MonoBehaviour
     {
         
         dist = Vector3.Distance(player.position, transform.position);
+        if(Input.touchCount >= 1 || Input.anyKeyDown) stop = true;
 
 
     }
@@ -53,7 +55,7 @@ public class DialogueBox : MonoBehaviour
                 popup.transform.Translate(Vector3.up);
                 popup.SetActive(true);
                 while (dist < 2) {
-                    if (dist < 2 && Input.GetKeyDown("e")) {
+                    if (dist < 2 && (Input.GetKeyDown("e"))) {
                         Speak();
                         popup.SetActive(false);
 
@@ -69,7 +71,7 @@ public class DialogueBox : MonoBehaviour
 
     // Controls how the typing effect is created to show dialogue.
     IEnumerator TypeDialogue() {
-        
+        stop = false;
         string txt = "";
         GameManagerScript.dialogue.text = txt;
 
@@ -78,12 +80,13 @@ public class DialogueBox : MonoBehaviour
             // The $ is used as a newbox (like newline) character.
             // If $ - clear box
             if (c == '$') {
-                yield return new WaitUntil(() => Input.GetKeyDown("space")); // Wait for mouseclick on screen
+                yield return new WaitUntil(() => Input.touchCount >= 1|| Input.GetKeyDown("space")); // Wait for mouseclick on screen
+                stop=false;
                 txt = "";
                 GameManagerScript.dialogue.text = txt;
             }
             else {     
-                if (c != ' ')
+                if (c != ' ' && !stop)
                     yield return new WaitForSeconds(.07f); 
                 txt += c;
                 GameManagerScript.dialogue.text = txt;
@@ -92,7 +95,7 @@ public class DialogueBox : MonoBehaviour
         }
 
         //Wait for mouseclick on screen to end.
-        yield return new WaitUntil(() => Input.GetKeyDown("space"));
+        yield return new WaitUntil(() =>Input.touchCount >= 1 || Input.GetKeyDown("space"));
 
         // Clears everything. 
         GameManagerScript.speaker.text = "";

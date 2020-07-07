@@ -12,6 +12,10 @@ public class DialogueBox : MonoBehaviour
     public Transform player;
     public GameObject popup;
     private float dist;
+<<<<<<< HEAD
+=======
+    public static Coroutine co;
+>>>>>>> ec8ce66247942e15abd24255310171a89b499910
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +33,41 @@ public class DialogueBox : MonoBehaviour
 
             GameManagerScript.textbox.SetActive(true); // show box
             GameManagerScript.speaker.text = this.speaker; // show name in box
-
-            StartCoroutine("TypeDialogue"); 
+            co = StartCoroutine(TypeDialogue()); 
 
             }
+    }
+    void Update()
+    {
+        
+        dist = Vector3.Distance(player.position, transform.position);
 
 
+    }
 
+    IEnumerator ProximityCheck() {
+        while (true){
+            if (dist < 2 && Input.GetKeyDown("e")) {
+                Speak();
+            }
+            else if (dist < 2)
+            {
+                popup.transform.position = transform.position;
+                popup.transform.Translate(Vector3.up);
+                popup.SetActive(true);
+                while (dist < 2) {
+                    if (dist < 2 && Input.GetKeyDown("e")) {
+                        Speak();
+                        popup.SetActive(false);
+
+                    }
+                    yield return null;
+                }
+                popup.SetActive(false);
+            }
+                yield return null;
+
+        }
     }
     void Update()
     {
@@ -72,6 +104,7 @@ public class DialogueBox : MonoBehaviour
 
     // Controls how the typing effect is created to show dialogue.
     IEnumerator TypeDialogue() {
+        
         string txt = "";
         GameManagerScript.dialogue.text = txt;
 

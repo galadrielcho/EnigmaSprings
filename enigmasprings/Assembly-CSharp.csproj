@@ -58,8 +58,15 @@
      <Compile Include="Assets\Boundaries.cs" />
      <Compile Include="Assets\DialogueBox.cs" />
      <Compile Include="Assets\GameManagerScript.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\NewDay.cs" />
      <Compile Include="Assets\PlayerManager.cs" />
+=======
+     <Compile Include="Assets\GameOver.cs" />
+     <Compile Include="Assets\NewDay.cs" />
+     <Compile Include="Assets\PlayerManager.cs" />
+     <Compile Include="Assets\SuspectSelect.cs" />
+>>>>>>> ec8ce66247942e15abd24255310171a89b499910
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -643,6 +650,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.14f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
+<<<<<<< HEAD
  <HintPath>C:/Users/Galadriel/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.PixelPerfect.Editor">
@@ -680,6 +688,45 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/Galadriel/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+=======
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.PixelPerfect.Editor">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Tilemap.Editor">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.PixelPerfect">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Users/Galad/OneDrive/Desktop/EnigmaSprings/enigmasprings/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+>>>>>>> ec8ce66247942e15abd24255310171a89b499910
  </Reference>
   </ItemGroup>
   <ItemGroup>

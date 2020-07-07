@@ -23,7 +23,15 @@ public class PlayerManager : MonoBehaviour
 
         if (!GameManagerScript.speaking) {
             animator.speed = 1;
+            // F speeds up player
+            if (Input.GetKey(KeyCode.F)) {
+                    speed = 10f;
+                }
+            else {
+                speed = 3f;
+            }
             // Player moves and looks up if up arrow or 'w' key is hit
+
             if (Input.GetKey(KeyCode.UpArrow)  ||  Input.GetKey(KeyCode.W)) {
                     sR.flipX = false;
                     animator.SetInteger("direction", 1);

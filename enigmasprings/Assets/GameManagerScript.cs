@@ -16,6 +16,11 @@ public class GameManagerScript : MonoBehaviour
     public static TextMeshProUGUI dialogue; 
     public static TextMeshProUGUI speaker; 
     public static GameObject textbox;
+<<<<<<< HEAD
+=======
+
+    public static string suspectChoice = "";
+>>>>>>> ec8ce66247942e15abd24255310171a89b499910
  
     // Used to make sure no more than one person is using the textbox at a time.
     public static bool speaking = false;
@@ -36,8 +41,13 @@ public class GameManagerScript : MonoBehaviour
         dialogue.text = "";
         textbox.SetActive(false);
     }
+<<<<<<< HEAD
  
  
 }
+=======
+}
+
+>>>>>>> ec8ce66247942e15abd24255310171a89b499910
  
 
