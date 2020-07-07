@@ -45,13 +45,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Boundaries.cs" />
-     <Compile Include="Assets\DialogueBox.cs" />
-     <Compile Include="Assets\GameManagerScript.cs" />
-     <Compile Include="Assets\GameOver.cs" />
-     <Compile Include="Assets\NewDay.cs" />
-     <Compile Include="Assets\PlayerManager.cs" />
-     <Compile Include="Assets\SuspectSelect.cs" />
+     <Compile Include="Assets\Scripts\Boundaries.cs" />
+     <Compile Include="Assets\Scripts\DialogueBox.cs" />
+     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
+     <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\NewDay.cs" />
+     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\SuspectSelect.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
