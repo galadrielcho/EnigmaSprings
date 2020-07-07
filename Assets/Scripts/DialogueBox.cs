@@ -40,14 +40,14 @@ public class DialogueBox : MonoBehaviour
     {
         
         dist = Vector3.Distance(player.position, transform.position);
-        if(Input.touchCount >= 1 || Input.anyKeyDown) stop = true;
+        if(GameManagerScript.speaking && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) stop = true;
 
 
     }
 
     IEnumerator ProximityCheck() {
         while (true){
-            if (dist < 2 && (GameManagerScript.hitInfo.collider.name == "selector")) {
+            if (dist < 2 && (GameManagerScript.getTappedObject() == "interact")) {
                 Speak();
             }
             else if (dist < 2)
@@ -58,7 +58,7 @@ public class DialogueBox : MonoBehaviour
                 interactor.SetActive(true);
 
                 while (dist < 2) {
-                    if (dist < 2 && (GameManagerScript.hitInfo.collider.name == "selector")) {
+                    if (dist < 2 && (GameManagerScript.getTappedObject() == "interact")) {
                         Speak();
                         popup.SetActive(false);
                         interactor.SetActive(false);
@@ -85,10 +85,11 @@ public class DialogueBox : MonoBehaviour
             // The $ is used as a newbox (like newline) character.
             // If $ - clear box
             if (c == '$') {
-                yield return new WaitUntil(() => Input.touchCount >= 1|| Input.GetKeyDown("space")); // Wait for mouseclick on screen
+                yield return new WaitUntil(() => (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)); // Wait for tap on screen
                 stop=false;
                 txt = "";
                 GameManagerScript.dialogue.text = txt;
+                yield return new WaitForSeconds(.5f);
             }
             else {     
                 if (c != ' ' && !stop)
@@ -100,7 +101,7 @@ public class DialogueBox : MonoBehaviour
         }
 
         //Wait for mouseclick on screen to end.
-        yield return new WaitUntil(() =>Input.touchCount >= 1 || Input.GetKeyDown("space"));
+        yield return new WaitUntil(() => (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended));
 
         // Clears everything. 
         GameManagerScript.speaker.text = "";

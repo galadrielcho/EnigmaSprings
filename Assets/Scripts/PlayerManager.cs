@@ -30,28 +30,27 @@ public class PlayerManager : MonoBehaviour
 
             // detect if raycast hit a movement control button collider
             if (GameManagerScript.hitInfo.collider != null){    
-                touchedObject = GameManagerScript.hitInfo.collider.name;
 
                 // Player moves and looks up if up button is touched
-                if (touchedObject == "up") {
+                if (GameManagerScript.touchedObject == "up") {
                         sR.flipX = false;
                         animator.SetInteger("direction", 1);
                         transform.Translate(Vector3.up * Time.deltaTime * speed);
                     }
                 // Player moves and looks down if down button is touched 
-                else if (touchedObject == "down"){
+                else if (GameManagerScript.touchedObject == "down"){
                         sR.flipX = false;
                         animator.SetInteger("direction", 2);
                         transform.Translate(Vector3.down * Time.deltaTime * speed);
                     }
                 // Player moves and looks left if left button is touched
-                else if (touchedObject == "left") {
+                else if (GameManagerScript.touchedObject == "left") {
                         sR.flipX = false;
                         animator.SetInteger("direction", 3);
                         transform.Translate(Vector3.left * Time.deltaTime * speed); 
                         }
                 // Player moves and looks right if right button is touched
-                else if (touchedObject == "right") {
+                else if (GameManagerScript.touchedObject == "right") {
                         animator.SetInteger("direction", 3);
                         sR.flipX = true;
                         transform.Translate(Vector3.right * Time.deltaTime * speed); 
