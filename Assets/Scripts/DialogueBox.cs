@@ -15,6 +15,8 @@ public class DialogueBox : MonoBehaviour
     public static Coroutine co;
     private bool stop = false;
     public GameObject interactor;
+    public float speakingSpeed = .07f;
+    private bool stall;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class DialogueBox : MonoBehaviour
         StartCoroutine("ProximityCheck");
     }
 
-    // Can/will be replaced by whatever code we use to show that something has interacted with the player.
+    // Can/will be replaced by whatever code we use to show that something has interacted with the player.S
     void Speak(){
 
         // Checks to make sure no one else is already talking.
@@ -40,11 +42,20 @@ public class DialogueBox : MonoBehaviour
     {
         
         dist = Vector3.Distance(player.position, transform.position);
-        if(GameManagerScript.speaking && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) stop = true;
+        if(!stall && GameManagerScript.speaking && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended){
+            stop = true;
+            stall = true;
+            StartCoroutine("StallTap"); 
+        }
 
 
     }
 
+    IEnumerator StallTap() {
+        yield return new WaitForSeconds(.5f);
+        stall = false;
+
+    }
     IEnumerator ProximityCheck() {
         while (true){
             if (dist < 2 && (GameManagerScript.getTappedObject() == "interact")) {
@@ -93,7 +104,7 @@ public class DialogueBox : MonoBehaviour
             }
             else {     
                 if (c != ' ' && !stop)
-                    yield return new WaitForSeconds(.07f); 
+                    yield return new WaitForSeconds(speakingSpeed); 
                 txt += c;
                 GameManagerScript.dialogue.text = txt;
                 // add char to textbox.
