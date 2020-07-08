@@ -11,16 +11,19 @@ public class GameOver : MonoBehaviour
     public Transform nameTransformField;
     public TextMeshProUGUI Heading; 
     public TextMeshProUGUI Names; 
+    public TextMeshProUGUI instruction; 
+    public TextMeshProUGUI instruction2; 
+    public GameObject yesno; 
     public GameObject confirm;
-
     public static Transform nameTransform;
     public static AudioSource click;
     public static TextMeshProUGUI nameTextbox;
     public List<SpriteRenderer> characters = new List<SpriteRenderer>();
     private SpriteRenderer sr;
+    private bool freeze= true;
 
     public static RaycastHit2D hitInfo;
-    private static string tappedObject ="";
+    private static string tappedObject ="no";
     public Dictionary<string, int> d = new Dictionary<string, int>{
         {"Tommy Carter", 0},  
         {"Sheriff Neil Baker", 1},  
@@ -34,6 +37,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        yesno.SetActive(false);
         confirm.SetActive(false);
         click = GetComponent<AudioSource>();
         sr = GetComponent<SpriteRenderer>();
@@ -47,23 +51,25 @@ public class GameOver : MonoBehaviour
     
     void Update() {
         // Fire raycast at touch position
-        if (Input.touchCount > 0) {
+        if (Input.touchCount > 0 && TouchPhase.Ended == Input.GetTouch(0).phase) {
             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             Vector2 touchPosWorld2D= new Vector2(touchPosWorld.x, touchPosWorld.y);
             hitInfo = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-            if (TouchPhase.Ended == Input.GetTouch(0).phase) {
-                if (tappedObject != "yes" && tappedObject != "no") {
-                    characters[d[tappedObject]].color = new Color(1, 1, 1, 1); 
-                }
-                tappedObject = hitInfo.collider.name;
-                if (tappedObject != "yes" && tappedObject != "no") {
-                    nameTextbox.text = tappedObject;
-                    nameTransform = hitInfo.transform;
-                    nameTransform.Translate(Vector3.down);
-                    characters[d[tappedObject]].color = new Color(1, 1, 1, .7f); 
-                }
 
+            if (tappedObject != "yes" && tappedObject != "no" && !freeze|| tappedObject=="no"&&freeze) {
+                characters[d[tappedObject]].color = new Color(1, 1, 1, 1); 
             }
+            tappedObject = hitInfo.collider.gameObject.name;
+            if (tappedObject != "yes" && tappedObject != "no" && !freeze) {
+                nameTextbox.text = tappedObject;
+                nameTransform.position = hitInfo.transform.position;
+                nameTransform.Translate(Vector3.down * 1.5f);
+                nameTransform.Translate(Vector3.left * 2f);
+
+                characters[d[tappedObject]].color = new Color(1, 1, 1, .7f); 
+            }
+
+            
 
         }
 
@@ -74,46 +80,55 @@ public class GameOver : MonoBehaviour
     IEnumerator endGame(){
         float t = 0; // time counter
 
-        while (tappedObject!= "yes"){
-            //fade in each suspect, one at a time
-            foreach (SpriteRenderer sr in  characters) {
-                t = 0;
-                while(t<.5f){
+        //fade in each suspect, one at a time
+        foreach (SpriteRenderer sr in  characters) {
+            t = 0;
+            while(t<.5f){
 
-                    t += Time.deltaTime; // time passed added to counter
-                    float alpha = Mathf.Lerp(0, 1,t/.5f);
-                    sr.color = new Color(1, 1, 1, alpha); 
-                    yield return null;
+                t += Time.deltaTime; // time passed added to counter
+                float alpha = Mathf.Lerp(0, 1,t/.5f);
+                sr.color = new Color(1, 1, 1, alpha); 
+                yield return null;
 
-                }
-
-                yield return new WaitForSeconds (.05f);
             }
-            yield return new WaitUntil(()=> Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && hitInfo.collider != null);
-            tappedObject = "";
-            click.Play();
 
+            yield return new WaitForSeconds (.05f);
+        }
+        freeze=false;
+        while (tappedObject!= "yes"){
+            yield return new WaitUntil(()=> tappedObject != "yes" && tappedObject != "no");
+            click.Play();
+            freeze = true;
+            yesno.SetActive(true);
             confirm.SetActive(true);
             yield return new WaitUntil(()=> tappedObject == "yes" || tappedObject == "no");
-            click.Play();
-
+            click.Play();   
+            freeze= false;
+            nameTextbox.text="";
             confirm.SetActive(false);
+            yesno.SetActive(false);
+
 
         }
+        nameTextbox.text="";
+        yesno.SetActive(false);
+        freeze=true;
+        confirm.SetActive(false);
         t = 0; // time counter
         while(t< 2f) // limit duration to  2 seconds
         {
             t += Time.deltaTime; // time passed added to counter
 
             float alpha = Mathf.Lerp(0, 1,t/2f);  // calculate transparency over time 
-
+            instruction.color = new Color(1, 1, 1, 1-alpha);
             winLoseTextbox.color = new Color(1, 0, 0, alpha);
             gameOverTextbox.color = new Color(1, 1, 1, alpha);
             sr.color = new Color(0, 0, 0, alpha); 
 
             yield return null;
         }
-        confirm.SetActive(false);
+        
+
 
         string typed = "";
         string txt = "You doomed an innocent to a life of misery.\nA killer runs free.";
@@ -129,8 +144,12 @@ public class GameOver : MonoBehaviour
             winLoseTextbox.text = typed;
         }
 
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(FadeInText(instruction2));
+
         yield return new WaitUntil(()=> Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended);
 
+        StartCoroutine(FadeOutText(instruction2));
         StartCoroutine(FadeOutText(gameOverTextbox));        
         StartCoroutine(FadeOutText(winLoseTextbox));
         yield return new WaitForSeconds(1.5f);
@@ -143,11 +162,11 @@ public class GameOver : MonoBehaviour
             "Luis Zuno (@ansimuz)\nLorien Cho",
             "Galadriel Cho\nLorien Cho",
             "The Path of the Goblin King\nby Kevin MacLeod\nLink:" +
-            "https://incompetech.filmmusic.io/\nsong/4503-the-path-of-the-goblin-king" +
+            "https://incompetech.filmmusic.io\n/song/4503-the-path-of-the-goblin-king" +
             "\nLicense:http://creativecommons.org/licenses/by/4.0/",
             "Classic Horror 1 by Kevin MacLeod\nLink: " +
             "https://incompetech.filmmusic.io/\nsong/3511-classic-horror-1" +
-            "\nLicense: http://creativecommons.org/licenses/by/4.0/"
+            "\nLicense:http://creativecommons.org\n/licenses/by/4.0/",
         };
 
         for (int i =0; i < 5; i++) {
@@ -163,6 +182,12 @@ public class GameOver : MonoBehaviour
 
 
         }
+        yield return new WaitForSeconds(1f);
+
+        Names.text="Thank you for playing.";
+        StartCoroutine(FadeInText(Names));
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(FadeOutText(Names));
 
 
     }

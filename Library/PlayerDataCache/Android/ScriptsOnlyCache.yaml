@@ -18,6 +18,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -28,7 +29,6 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Image
   sceneClasses:
     Assets/Scenes/KillerSelect.unity:
     - Class: 1
@@ -39,7 +39,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -60,25 +66,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 11392}
+      Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 11636}
+      Script: {instanceID: 11722}
     - Class: 114
-      Script: {instanceID: 11724}
+      Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 11826}
+      Script: {instanceID: 11852}
     - Class: 114
-      Script: {instanceID: 11854}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12492}
-    - Class: 114
-      Script: {instanceID: 12506}
+      Script: {instanceID: 12504}
     - Class: 114
       Script: {instanceID: 12718}
     - Class: 114
       Script: {instanceID: 12786}
     - Class: 114
       Script: {instanceID: 12970}
+    - Class: 114
+      Script: {instanceID: 13080}
     - Class: 114
       Script: {instanceID: 13088}
     - Class: 114
@@ -284,7 +290,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 1d7af3efe1a059dd9a9f2bdc37c4eb73
+      Hash: 7f13ae4ee008abc627b330d6485085c6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameOver
@@ -522,6 +528,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextSelector_A
+  - hash:
+      serializedVersion: 2
+      Hash: 49a3abef540ded286296d0bd100a4fdb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsScript
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
