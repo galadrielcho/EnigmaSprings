@@ -40,7 +40,7 @@ public class NewDay : MonoBehaviour
             string txt = "Welcome to Enigma Springs,\na quiet mining town. After the mine owner,\n" +
             " Richard Hawthorne, was found murdered,\nunrest has risen among the townspeople.\n" +
             " Talk to them as Detective Cooper, and\n gather clues!" +
-            "Go to the inn when you are\n finished talking to others for the day.\n" +
+            " Go to the inn when you are\n finished talking to others for the day.\n" +
             " After 5 days, you must\n decide the culprit. Good luck!"; //store intro text
 
         

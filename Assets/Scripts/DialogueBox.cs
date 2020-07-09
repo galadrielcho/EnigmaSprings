@@ -56,7 +56,6 @@ public class DialogueBox : MonoBehaviour
         dist = Vector3.Distance(player.position, transform.position);
         if(!stall && GameManagerScript.speaking && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended){
             stop = true;
-            stall = true;
             StartCoroutine("StallTap"); 
         }
 
@@ -64,6 +63,7 @@ public class DialogueBox : MonoBehaviour
     }
 
     IEnumerator StallTap() {
+        stall=true;
         yield return new WaitForSeconds(.5f);
         stall = false;
 
@@ -108,7 +108,8 @@ public class DialogueBox : MonoBehaviour
             // The $ is used as a newbox (like newline) character.
             // If $ - clear box
             if (c == '$') {
-                yield return new WaitUntil(() => (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)); // Wait for tap on screen
+                yield return new WaitUntil(() => (!stall && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)); // Wait for tap on screen
+                StartCoroutine(StallTap());
                 stop=false;
                 txt = "";
                 GameManagerScript.dialogue.text = txt;

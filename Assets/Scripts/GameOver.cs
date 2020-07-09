@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI gameOverTextbox; 
     public TextMeshProUGUI winLoseTextbox; 
-    public TextMeshProUGUI nameTextboxField; 
+    public TextMeshPro nameTextboxField; 
     public Transform nameTransformField;
     public TextMeshProUGUI Heading; 
     public TextMeshProUGUI Names; 
@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
     public GameObject confirm;
     public static Transform nameTransform;
     public static AudioSource click;
-    public static TextMeshProUGUI nameTextbox;
+    public static TextMeshPro nameTextbox;
     public List<SpriteRenderer> characters = new List<SpriteRenderer>();
     private SpriteRenderer sr;
     private bool freeze= true;
@@ -75,8 +75,7 @@ public class GameOver : MonoBehaviour
             if (tappedObject != "yes" && tappedObject != "no" && !freeze) {
                 nameTextbox.text = tappedObject;
                 nameTransform.position = hitInfo.transform.position;
-                nameTransform.Translate(Vector3.down * 1.5f);
-                nameTransform.Translate(Vector3.left * 2f);
+                nameTransform.Translate(Vector3.down * 2.5f);
 
                 characters[d[tappedObject]].color = new Color(1, 1, 1, .7f); 
             }
@@ -172,7 +171,7 @@ public class GameOver : MonoBehaviour
 
         string[] names = {
             "Lorien Cho\nGaladriel Cho",
-            "Luis Zuno (@ansimuz)\nLorien Cho",
+            "Luis Zuno (@ansimuz)\nGaladriel Cho\nLorien Cho",
             "Galadriel Cho\nLorien Cho",
             "The Path of the Goblin King\nby Kevin MacLeod\nLink:" +
             "https://incompetech.filmmusic.io\n/song/4503-the-path-of-the-goblin-king" +

@@ -36,7 +36,7 @@ public class SettingsScript : MonoBehaviour
         if (pauseState) {
             PlayerPrefs.SetInt("soundmute", ((audioSource.mute) ? 1 : 0));
             PlayerPrefs.SetInt("selectedButton1", (audioSource.mute ? 0 : 1));
-            PlayerPrefs.SetInt("selectedButton2", (DialogueBox.speakingSpeed == .07f) ? 2 : (DialogueBox.speakingSpeed == .04f) ? 3 : 4);
+            PlayerPrefs.SetInt("selectedButton2", (DialogueBox.speakingSpeed == .07f) ? 2 : (DialogueBox.speakingSpeed == .055f) ? 3 : 4);
             PlayerPrefs.SetInt("selectedButton3", (PlayerManager.speed == 4) ? 5 : (PlayerManager.speed == 6) ? 6 : 7);
             PlayerPrefs.Save();
         }
@@ -69,10 +69,10 @@ public class SettingsScript : MonoBehaviour
 
                 } else if (gameObjectName == "dialoguespeed2") {
                     choice = 3;
-                    DialogueBox.speakingSpeed = .04f;
+                    DialogueBox.speakingSpeed = .055f;
                 } else if (gameObjectName == "dialoguespeed3") {
                     choice = 4;
-                    DialogueBox.speakingSpeed = .02f;
+                    DialogueBox.speakingSpeed = .04f;
                 }
                 // Changing Walking Speed
                 else if (gameObjectName == "walkingspeed1") {
