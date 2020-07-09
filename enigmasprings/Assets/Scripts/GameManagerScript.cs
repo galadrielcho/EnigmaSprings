@@ -5,20 +5,20 @@ using UnityEngine;
  
 public class GameManagerScript : MonoBehaviour
 {
-    public static int day=1;
+    public static int day;
         
     
     // Static variables cannot be assigned in inspector - so we have dummy variables here.
     public TextMeshProUGUI field_dialogue; 
     public TextMeshProUGUI field_speaker; 
     public GameObject field_textbox;
- 
     public static TextMeshProUGUI dialogue; 
     public static TextMeshProUGUI speaker; 
     public static GameObject textbox;
     public static RaycastHit2D hitInfo;
     public static string suspectChoice = "";
     public static string touchedObject ="";
+    public GameObject player;
     public static string tappedObject ="";
 
  
@@ -27,7 +27,6 @@ public class GameManagerScript : MonoBehaviour
 
     private Vector3 touchPosWorld;
 
- 
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +34,13 @@ public class GameManagerScript : MonoBehaviour
         dialogue = field_dialogue;
         speaker = field_speaker;
         textbox = field_textbox;
+    }
+
+    void Awake() {
+        day = PlayerPrefs.GetInt("day", 1);
+        if (PlayerPrefs.HasKey("KillerSelect")){
+            day = 5;
+        }
     }
  
     public static void ClearTextbox() {
@@ -70,9 +76,17 @@ public class GameManagerScript : MonoBehaviour
         return tO;
     }
 
-    void settingsAppears() {
+    void OnApplicationPause(bool pauseState){
+        if (pauseState) {
+            PlayerPrefs.SetInt("day", day);
+            PlayerPrefs.Save();
+            PlayerPrefs.SetFloat("x", player.transform.position.x);
+            PlayerPrefs.SetFloat("y", player.transform.position.y);
+            PlayerPrefs.Save();
+        }
 
     }
+
 }
 
  

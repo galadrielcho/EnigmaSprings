@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     
-    public static float speed = 3f;
+    public static float speed;
     private SpriteRenderer sR;
     public Sprite[] heroArray;
     public Camera mainCamera;
@@ -15,11 +15,53 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         sR = GetComponent<SpriteRenderer>();
-   
+
+    }
+    void Awake() {
+        float x =PlayerPrefs.GetFloat("x", 0f);
+        float y =PlayerPrefs.GetFloat("y", 0f);
+        Vector2 v = new Vector2(x,y);
+        transform.position = v;
+        speed = PlayerPrefs.GetFloat("speed", 3f);
+
+    }
+    void OnApplicationPause(bool pauseState){
+        if (pauseState) {
+            PlayerPrefs.SetFloat("speed", speed);
+            PlayerPrefs.Save();
+        }
 
     }
 
+    public void test() {
+                float x =PlayerPrefs.GetFloat("x", 0f);
+        float y =PlayerPrefs.GetFloat("y", 0f);
+        Vector2 v = new Vector2(x,y);
+        transform.position = v;
 
+
+    }
+
+    public void save() {
+                    Debug.Log("asdf");
+
+    PlayerPrefs.SetFloat("x", transform.position.x);
+            PlayerPrefs.SetFloat("y", transform.position.y);
+            PlayerPrefs.Save();
+            Debug.Log("asdf");
+
+
+    }
+    // void onApplicationPause(bool pauseState) {
+    //     if (pauseState) {
+    //         PlayerPrefs.SetFloat("x", transform.position.x);
+    //         PlayerPrefs.SetFloat("y", transform.position.y);
+    //         PlayerPrefs.Save();
+    //     }
+  
+
+
+    // }
     void FixedUpdate()
     {
 
