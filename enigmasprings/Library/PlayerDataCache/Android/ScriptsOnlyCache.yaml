@@ -181,8 +181,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13088}
     - Class: 114
       Script: {instanceID: 13198}
-    - Class: 114
-      Script: {instanceID: 14212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -506,7 +504,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: cd617a739c8d8a3ecf89785df3123f86
+      Hash: 519b64d0a109b3cd3b7f79ebad1bb3ba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManagerScript
@@ -632,7 +630,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: 4e5da6740e1f45a1f6c8262323b6197e
+      Hash: 765889a2c9d3611eae41275cb0aab90a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsScript

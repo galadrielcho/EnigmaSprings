@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class GameOver : MonoBehaviour
 
     public static RaycastHit2D hitInfo;
     private static string tappedObject ="no";
+    private string tappedCharacter;
+    private bool first = true;
     public Dictionary<string, int> d = new Dictionary<string, int>{
         {"Tommy Carter", 0},  
         {"Sheriff Neil Baker", 1},  
@@ -55,11 +58,17 @@ public class GameOver : MonoBehaviour
             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             Vector2 touchPosWorld2D= new Vector2(touchPosWorld.x, touchPosWorld.y);
             hitInfo = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-
-            if (tappedObject != "yes" && tappedObject != "no" && !freeze|| tappedObject=="no"&&freeze) {
-                characters[d[tappedObject]].color = new Color(1, 1, 1, 1); 
-            }
+            tappedCharacter = tappedObject;
             tappedObject = hitInfo.collider.gameObject.name;
+            if (!first){
+
+                if (tappedObject == "yes" || tappedObject == "no" ){
+                    characters[d[tappedCharacter]].color = new Color(1, 1, 1, 1); 
+                } 
+            }
+             else {
+                first= false;
+            } 
             if (tappedObject != "yes" && tappedObject != "no" && !freeze) {
                 nameTextbox.text = tappedObject;
                 nameTransform.position = hitInfo.transform.position;
@@ -68,8 +77,7 @@ public class GameOver : MonoBehaviour
 
                 characters[d[tappedObject]].color = new Color(1, 1, 1, .7f); 
             }
-
-            
+                      
 
         }
 
@@ -79,7 +87,7 @@ public class GameOver : MonoBehaviour
 
     IEnumerator endGame(){
         float t = 0; // time counter
-
+        StartCoroutine(FadeInText(instruction));
         //fade in each suspect, one at a time
         foreach (SpriteRenderer sr in  characters) {
             t = 0;
@@ -110,6 +118,8 @@ public class GameOver : MonoBehaviour
 
 
         }
+        PlayerPrefs.SetInt("KillerSelect", 1);
+        PlayerPrefs.Save();
         nameTextbox.text="";
         yesno.SetActive(false);
         freeze=true;
@@ -188,8 +198,7 @@ public class GameOver : MonoBehaviour
         StartCoroutine(FadeInText(Names));
         yield return new WaitForSeconds(3f);
         StartCoroutine(FadeOutText(Names));
-
-
+        SceneManager.LoadScene("town");
     }
 
     IEnumerator FadeInText(TextMeshProUGUI txtbox) {

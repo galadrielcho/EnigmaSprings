@@ -24,20 +24,30 @@ public class NewDay : MonoBehaviour
     
     // Update is called once per frame
     void Start() {
-        nextDay.SetActive(false);
-        skip.text = "tap anywhere to skip";
         night.enabled = true; //Makes the start screen black.
+        nextDay.SetActive(false);
 
-        string txt = "Welcome to Enigma Springs,\na quiet mining town. After the mine owner,\n" +
-        " Richard Hawthorne, was found murdered,\nunrest has risen among the townspeople.\n" +
-        " Talk to them as Detective Cooper, and\n gather clues!" +
-        " After 5 days, you must\n decide the culprit. Good luck!"; //store intro text
+        if (!PlayerPrefs.HasKey("intro")){
 
-    
-        StartCoroutine(Type(txt, SystemText, true)); //Intro text is typed on screen
-        // txt = what is typed. SystemText = the textbox used true = tells function part of intro
+            skip.text = "tap anywhere to skip";
 
-        StartCoroutine("ProximityCheck");
+            string txt = "Welcome to Enigma Springs,\na quiet mining town. After the mine owner,\n" +
+            " Richard Hawthorne, was found murdered,\nunrest has risen among the townspeople.\n" +
+            " Talk to them as Detective Cooper, and\n gather clues!" +
+            "Go to the inn when you are\n finished talking to others for the day.\n" +
+            " After 5 days, you must\n decide the culprit. Good luck!"; //store intro text
+
+        
+            StartCoroutine(Type(txt, SystemText, true)); //Intro text is typed on screen
+            // txt = what is typed. SystemText = the textbox used true = tells function part of intro
+            PlayerPrefs.SetInt("intro", 1);
+            PlayerPrefs.Save();
+        }
+        else {
+            StartCoroutine(FadeOut(false));
+        }
+
+        if (!PlayerPrefs.HasKey("KillerSelect")) StartCoroutine("ProximityCheck");
     }
 
     void Update()
@@ -141,9 +151,10 @@ public class NewDay : MonoBehaviour
         }
 
         GameManagerScript.day += 1; //Changed to next day
-
+        nextDay.SetActive(false);
         if (GameManagerScript.day == 6)
         {
+
             string lastdaytext = "Your time in Enigma Springs has come to an end.\n    You must pick the killer.\n             Choose wisely,\nThe town is counting on you...";
             SystemText.text = "";
             SystemText.color = new Color(1, 1, 1, 1);
