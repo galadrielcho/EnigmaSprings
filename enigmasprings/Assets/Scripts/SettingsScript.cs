@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsScript : MonoBehaviour
 {
@@ -8,9 +9,8 @@ public class SettingsScript : MonoBehaviour
     private AudioSource audioSource;
 
     public GameObject player;
-    public string gameObjectName;
-    public GameObject[] hideOrShow;
-    private int choice = -1;
+    public GameObject hideOrShow;
+    private int choice;
     public SpriteRenderer[] spriteRenderers = new SpriteRenderer[8];
     private int[] selectedButtons = new int[3];
 
@@ -22,6 +22,7 @@ public class SettingsScript : MonoBehaviour
     }
     
     void Awake() {
+        choice = -1;
         audioSource = cam.GetComponent<AudioSource>();
 
         // Get which buttons were selected prior to last app usage
@@ -35,7 +36,7 @@ public class SettingsScript : MonoBehaviour
         if (pauseState) {
             PlayerPrefs.SetInt("soundmute", ((audioSource.mute) ? 1 : 0));
             PlayerPrefs.SetInt("selectedButton1", (audioSource.mute ? 0 : 1));
-            PlayerPrefs.SetInt("selectedButton2", (DialogueBox.speakingSpeed == .07f) ? 2 : (DialogueBox.speakingSpeed == .04f) ? 3 : 4);
+            PlayerPrefs.SetInt("selectedButton2", (DialogueBox.speakingSpeed == .07f) ? 2 : (DialogueBox.speakingSpeed == .055f) ? 3 : 4);
             PlayerPrefs.SetInt("selectedButton3", (PlayerManager.speed == 4) ? 5 : (PlayerManager.speed == 6) ? 6 : 7);
             PlayerPrefs.Save();
         }
@@ -44,14 +45,14 @@ public class SettingsScript : MonoBehaviour
     void FixedUpdate()
     {
         // Check for touches and then detect if raycast hit collider and if the touched object is itself
-        if (Input.touchCount > 0 && GameManagerScript.hitInfo.collider != null && GameManagerScript.touchedObject == gameObjectName) {
+        if (Input.touchCount > 0 && GameManagerScript.hitInfo.collider != null && !NewDay.intro) {
+            string gameObjectName = GameManagerScript.touchedObject;
             // Settings button or 'x' button
-            if ((gameObjectName == "settings" && !hideOrShow[0].activeSelf)|| (gameObjectName == "x" && hideOrShow[0].activeSelf)) {
+            if ((gameObjectName == "settings" && !hideOrShow.activeSelf)|| (gameObjectName == "x" && hideOrShow.activeSelf)) {
                 // Hide or show bg, options, and title for settings screen
-                for (int i = 0; i < hideOrShow.Length; i++) {
-                    hideOrShow[i].SetActive(!hideOrShow[i].activeSelf);
-                    GameManagerScript.speaking = hideOrShow[i].activeSelf;
-                }
+                hideOrShow.SetActive(!hideOrShow.activeSelf);
+                GameManagerScript.speaking = hideOrShow.activeSelf;
+
             } else {
                 // Mute sound button or sound on button 
                  if (gameObjectName == "soundmute"){
@@ -68,10 +69,10 @@ public class SettingsScript : MonoBehaviour
 
                 } else if (gameObjectName == "dialoguespeed2") {
                     choice = 3;
-                    DialogueBox.speakingSpeed = .04f;
+                    DialogueBox.speakingSpeed = .055f;
                 } else if (gameObjectName == "dialoguespeed3") {
                     choice = 4;
-                    DialogueBox.speakingSpeed = .01f;
+                    DialogueBox.speakingSpeed = .04f;
                 }
                 // Changing Walking Speed
                 else if (gameObjectName == "walkingspeed1") {
@@ -83,7 +84,16 @@ public class SettingsScript : MonoBehaviour
                 } else if (gameObjectName == "walkingspeed3") {
                     choice = 7;
                     PlayerManager.speed = 8;
-                }}
+                }
+                else if (gameObjectName == "reset") {
+                    PlayerPrefs.DeleteAll();
+                    choice = 0;
+                    spriteRenderers[2].color = new Color(.6823f, .5568f, .5568f, 1);
+                    spriteRenderers[5].color = new Color(.6823f, .5568f, .5568f, 1);
+                    SceneManager.LoadScene("town");
+
+                }
+                }
                 // Changes color of the button to denote that it is selected.
                 spriteRenderers[choice].color = new Color(.6823f, .5568f, .5568f, 1);
 
@@ -96,16 +106,20 @@ public class SettingsScript : MonoBehaviour
                         if (i != choice)
                             spriteRenderers[i].color = Color.white;
                     }
+                }
+                if (gameObjectName == "reset") choice = 2;
 
                 // Dialogue speed buttons
-                } else if (choice >= 2 && choice <= 4) {
+                if (choice >= 2 && choice <= 4) {
                     for (int i = 2; i <= 4; i ++) {
                         if (i != choice)
                             spriteRenderers[i].color = Color.white;
                     }
-                
+                }
+                if (gameObjectName == "reset") choice = 5;
+
                 // Walking speed butons
-                } else if (choice >= 5 && choice <= 7) {
+                if (choice >= 5 && choice <= 7) {
                     for (int i = 5; i <= 7; i ++) {
                         if (i != choice)
                             spriteRenderers[i].color = Color.white;

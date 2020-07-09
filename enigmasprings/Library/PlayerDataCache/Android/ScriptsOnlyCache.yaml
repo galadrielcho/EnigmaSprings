@@ -115,8 +115,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 33
       Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
@@ -630,7 +628,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: 765889a2c9d3611eae41275cb0aab90a
+      Hash: ed2dbd6721a57c8b900643626b19854a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsScript

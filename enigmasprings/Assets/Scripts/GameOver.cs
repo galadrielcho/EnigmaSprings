@@ -40,6 +40,9 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        freeze = true;
+        tappedObject= "no";
+        first =  true;
         yesno.SetActive(false);
         confirm.SetActive(false);
         click = GetComponent<AudioSource>();

@@ -30,6 +30,9 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        suspectChoice = "";
+        touchedObject ="";
+        tappedObject = "";
         // Dummy variables are replaced
         dialogue = field_dialogue;
         speaker = field_speaker;
