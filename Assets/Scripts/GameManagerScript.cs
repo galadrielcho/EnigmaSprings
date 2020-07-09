@@ -19,7 +19,7 @@ public class GameManagerScript : MonoBehaviour
     public static RaycastHit2D hitInfo;
     public static string suspectChoice = "";
     public static string touchedObject ="";
-    private static string tappedObject ="";
+    public static string tappedObject ="";
 
  
     // Used to make sure no more than one person is using the textbox at a time.

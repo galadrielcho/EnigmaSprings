@@ -6,17 +6,17 @@ public class SettingsScript : MonoBehaviour
 {
     public Camera cam;
     private AudioSource audioSource;
-    public DialogueBox dB;
-    public PlayerManager pM;
 
+    public GameObject player;
     public string gameObjectName;
     public GameObject[] hideOrShow;
-    private SpriteRenderer spriteRenderer;
-    private int changing = -1;
-    public int type;
+    private SpriteRenderer[] spriteRenderers = new SpriteRenderer[8];
     void Start() {
         audioSource = cam.GetComponent<AudioSource>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        for (int i = 3; i < 11; i++) {
+            spriteRenderers[i-3] = hideOrShow[i].GetComponent<SpriteRenderer>();
+        }
+
     }
     void FixedUpdate()
     {
@@ -27,30 +27,39 @@ public class SettingsScript : MonoBehaviour
                 // Hide or show bg, options, and title for settings screen
                 for (int i = 0; i < hideOrShow.Length; i++) {
                     hideOrShow[i].SetActive(!hideOrShow[i].activeSelf);
+                    GameManagerScript.speaking = hideOrShow[i].activeSelf;
                 }
             } else {
-                spriteRenderer.color = new Color(174, 142, 142);
-                // Mute sound button or sound on button
+                // Mute sound button or sound on button + Colors of button
                  if (gameObjectName == "soundmute"){
                     audioSource.mute = true;
+                    spriteRenderers[0].color = new Color(174, 142, 142);
                 } else if (gameObjectName == "soundon") {
                     audioSource.mute = false;
+                    spriteRenderers[1].color = new Color(174, 142, 142);
                 } 
-                // Changing dialogue speed
+                // Changing dialogue speed + Colors of button
                 else if (gameObjectName == "dialoguespeed1") {
-                    dB.speakingSpeed = .07f;
+                    DialogueBox.speakingSpeed = .07f;
+                    spriteRenderers[2].color = new Color(174, 142, 142);
+
                 } else if (gameObjectName == "dialoguespeed2") {
-                    dB.speakingSpeed = .03f;
+                    DialogueBox.speakingSpeed = .04f;
+                    spriteRenderers[3].color = new Color(174, 142, 142);
                 } else if (gameObjectName == "dialoguespeed3") {
-                    dB.speakingSpeed = .01f;
+                    DialogueBox.speakingSpeed = .01f;
+                    spriteRenderers[4].color = new Color(174, 142, 142);
                 }
-                // Changing Walking Speed
-                if (gameObjectName == "walkingspeed1") {
-                    pM.speed = 10;
+                // Changing Walking Speed + Colors of button
+                else if (gameObjectName == "walkingspeed1") {
+                    PlayerManager.speed = 4;
+                    spriteRenderers[5].color = new Color(174, 142, 142);
                 } else if (gameObjectName == "walkingspeed2") {
-                    pM.speed = 15;
+                    PlayerManager.speed = 7;
+                    spriteRenderers[6].color = new Color(174, 142, 142);
                 } else if (gameObjectName == "walkingspeed3") {
-                    pM.speed = 20;
+                    PlayerManager.speed = 10;
+                    spriteRenderers[7].color = new Color(174, 142, 142);
                 }}
             }
         }

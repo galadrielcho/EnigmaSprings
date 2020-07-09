@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     
-    public float speed = 10f;
+    public static float speed = 3f;
     private SpriteRenderer sR;
     public Sprite[] heroArray;
     public Camera mainCamera;

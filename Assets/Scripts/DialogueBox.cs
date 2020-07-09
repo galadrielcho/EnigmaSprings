@@ -15,7 +15,7 @@ public class DialogueBox : MonoBehaviour
     public static Coroutine co;
     private bool stop = false;
     public GameObject interactor;
-    public float speakingSpeed = .07f;
+    public static float speakingSpeed = .07f;
     private bool stall;
 
     // Start is called before the first frame update

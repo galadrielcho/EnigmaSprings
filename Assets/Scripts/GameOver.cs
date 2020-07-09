@@ -27,7 +27,7 @@ public class GameOver : MonoBehaviour
     public Dictionary<string, int> d = new Dictionary<string, int>{
         {"Tommy Carter", 0},  
         {"Sheriff Neil Baker", 1},  
-        {"Clayton Hawthorne", 2},  
+        {"Clay Hawthorne", 2},  
         {"Sarah Thompson", 3},
         {"Mayor Roy Roberts", 4}  
     };

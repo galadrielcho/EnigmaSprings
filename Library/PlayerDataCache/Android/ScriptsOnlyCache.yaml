@@ -11,8 +11,6 @@ ScriptsOnlyBuild:
     Unity.2D.PixelPerfect.dll:
     - UnityEngine.U2D.PixelPerfectCamera
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -117,6 +115,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 33
       Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
@@ -182,7 +182,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 14212}
+      Script: {instanceID: 14632}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -224,7 +224,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: e4c3be20d47c709d4198ccc4d4c70e88
+      Hash: df5b54dc8da24314db2261c0880ad23a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerManager
@@ -248,7 +248,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 0c01747aa0796160981552afa83326e0
+      Hash: 1f9da557d846cd6f1f7bbf8be2b39098
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NewDay
@@ -542,7 +542,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 175898956a79751b20589cff0ac73251
+      Hash: 36ebac7c851c6ac14057c9c094d3dc68
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DialogueBox
@@ -632,7 +632,7 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
-      Hash: e8e0f754755f8b8c09b66cb211125441
+      Hash: 4e5da6740e1f45a1f6c8262323b6197e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsScript
