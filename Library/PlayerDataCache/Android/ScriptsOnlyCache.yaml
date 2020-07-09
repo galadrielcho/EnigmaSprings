@@ -34,11 +34,9 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
-    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/KillerSelect.unity:
     - Class: 1
@@ -153,8 +151,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11348}
-    - Class: 114
       Script: {instanceID: 11392}
     - Class: 114
       Script: {instanceID: 11634}
@@ -166,8 +162,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11924}
     - Class: 114
       Script: {instanceID: 12142}
-    - Class: 114
-      Script: {instanceID: 12248}
     - Class: 114
       Script: {instanceID: 12340}
     - Class: 114
