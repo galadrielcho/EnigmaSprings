@@ -27,6 +27,7 @@ public class SettingsScript : MonoBehaviour
                 // Hide or show bg, options, and title for settings screen
                 for (int i = 0; i < hideOrShow.Length; i++) {
                     hideOrShow[i].SetActive(!hideOrShow[i].activeSelf);
+                    GameManagerScript.speaking = hideOrShow[i].activeSelf;
                 }
             } else {
                 // Mute sound button or sound on button + Colors of button

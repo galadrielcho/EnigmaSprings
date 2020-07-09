@@ -14,12 +14,17 @@ public class NewDay : MonoBehaviour
     public TextMeshProUGUI DayText;
     public AudioSource music;
     public TextMeshProUGUI skip;
+    public GameObject popup;
+    public GameObject interactor;
+    public GameObject nextDay;
 
+    private float dist;
     private float t = 0;
     private bool stop = false;
     
     // Update is called once per frame
     void Start() {
+        nextDay.SetActive(false);
         skip.text = "tap anywhere to skip";
         night.enabled = true; //Makes the start screen black.
 
@@ -31,10 +36,13 @@ public class NewDay : MonoBehaviour
     
         StartCoroutine(Type(txt, SystemText, true)); //Intro text is typed on screen
         // txt = what is typed. SystemText = the textbox used true = tells function part of intro
+
+        StartCoroutine("ProximityCheck");
     }
 
     void Update()
     {
+        dist = Vector3.Distance(player.position, transform.position);
         // trying to make sure you can only change days at inn door.
         // later - maybe make it dependent on speaker name instead.
         if(GameManagerScript.speaking && Input.GetKeyDown("y") && Vector3.Distance(player.position, transform.position) < 2) {
@@ -46,6 +54,50 @@ public class NewDay : MonoBehaviour
          if(Input.touchCount >= 1 || Input.anyKeyDown) stop = true;
 
     }
+
+    IEnumerator ProximityCheck() {
+        while (true){
+            if (dist < 2 && (GameManagerScript.getTappedObject() == "interact")) {
+                StartCoroutine("Ask");
+            }
+            else if (dist < 2)
+            {
+                popup.transform.position = transform.position;
+                popup.transform.Translate(Vector3.up);
+                popup.SetActive(true);
+                interactor.SetActive(true);
+
+                while (dist < 2) {
+                    if (dist < 2 && (GameManagerScript.getTappedObject() == "interact")) {
+                        StartCoroutine("Ask");
+                        popup.SetActive(false);
+                        interactor.SetActive(false);
+
+                    }
+                    yield return null;
+                }
+                interactor.SetActive(false);
+                popup.SetActive(false);
+            }
+                yield return null;
+
+        }
+    }
+
+    IEnumerator Ask(){
+        GameManagerScript.speaking = true;
+        nextDay.SetActive(true);
+        yield return new WaitUntil(() => (GameManagerScript.tappedObject == "YesStart" || GameManagerScript.tappedObject=="NoStart"));
+        nextDay.SetActive(false);
+        if (GameManagerScript.getTappedObject() == "YesStart") {
+            StartCoroutine("FadeIn"); //screen turns black
+
+        }
+        else {
+            GameManagerScript.speaking = false;
+        }
+    }
+
 
     // txt: text to be typed 
     // txtbox: textbox to edit
@@ -66,6 +118,7 @@ public class NewDay : MonoBehaviour
         if (fade) {
             yield return new WaitForSeconds(1f);
             StartCoroutine("FadeOut", true);
+
         }
 
         stop = false;
@@ -87,9 +140,8 @@ public class NewDay : MonoBehaviour
             yield return null;
         }
 
-        GameManagerScript.speaking = false; 
         GameManagerScript.day += 1; //Changed to next day
-        
+
         if (GameManagerScript.day == 6)
         {
             string lastdaytext = "Your time in Enigma Springs has come to an end.\n    You must pick the killer.\n             Choose wisely,\nThe town is counting on you...";
@@ -100,7 +152,6 @@ public class NewDay : MonoBehaviour
         }
         else {
             StartCoroutine("FadeOut", false); // fade out 
-
         }
     }
 
@@ -137,6 +188,7 @@ public class NewDay : MonoBehaviour
             StartCoroutine(Type("Day " + GameManagerScript.day, DayText, false));
 
         }
+        GameManagerScript.speaking =false;
 
     }
 }
