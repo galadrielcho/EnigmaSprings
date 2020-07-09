@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 552
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 66
+  controlID: 109
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 37
+  controlID: 110
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,20 +338,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Graphics
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Graphics
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Galadriel\Desktop\EnigmaSprings\enigmasprings
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 71}
-    m_SelectedIDs: ea3c0000
-    m_LastClickedID: 15594
-    m_ExpandedIDs: 00000000d63c0000d83c0000da3c000000ca9a3b
+    m_SelectedIDs: a83c0000
+    m_LastClickedID: 15528
+    m_ExpandedIDs: 000000009c3c00009e3c0000a03c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +379,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d63c0000d83c0000da3c0000
+    m_ExpandedIDs: 000000009c3c00009e3c0000a03c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 280
+  m_LastVerticalScrollValue: 0
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ea300000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7cdaffff90daffffa2daffffb8daffff46ddffff5addffff44deffff5adefffff2e5ffff06e6fffff4e6ffff0ee7ffffeae7fffffee7ffffece8ffff06e9ffffcce9ffffe0e9ffffcaeaffffe0eaffffa0ebffffb4ebffff9eecffffb4ecffff76edffff8aedffff74eeffff8aeeffffa6efffffbaefffffa4f0ffffbaf0ffff76f1ffff8af1ffff74f2ffff8af2ffff4cf3ffff60f3ffff4ef4ffff68f4ffff4af6ffff5ef6ffff48f7ffff5ef7ffff00faffff60fbffffa83f0000749b0000ee9b0000bca60000
+      m_ExpandedIDs: 54f4ffff68f4ffff56f5ffff70f5ffff42f6ffff56f6ffff6cf6ffff86f6ffffe4f6fffff8f6ffffe2f7fffff8f7ffffaaf8ffffbef8ffffa8f9ffffbef9ffff60fbffffa2360000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -564,9 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 212.0398, y: 21.00112, z: -25.71031}
+    m_Target: {x: 36.069996, y: -15.171709, z: -42.891346}
     speed: 2
-    m_Value: {x: 203.78427, y: 20.08384, z: -25.004585}
+    m_Value: {x: 36.044476, y: -15.032775, z: -42.851368}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -616,9 +616,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 187.23445
+    m_Target: 10.610589
     speed: 2
-    m_Value: 196.05702
+    m_Value: 11.110564
   m_Ortho:
     m_Target: 1
     speed: 2

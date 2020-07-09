@@ -34,9 +34,9 @@ public class SettingsScript : MonoBehaviour
         // Save which buttons were selected.
         if (pauseState) {
             PlayerPrefs.SetInt("soundmute", ((audioSource.mute) ? 1 : 0));
-            PlayerPrefs.SetInt("selectedButton1", selectedButtons[0]);
-            PlayerPrefs.SetInt("selectedButton2", selectedButtons[1]);
-            PlayerPrefs.SetInt("selectedButton3", selectedButtons[2]);
+            PlayerPrefs.SetInt("selectedButton1", (audioSource.mute ? 0 : 1));
+            PlayerPrefs.SetInt("selectedButton2", (DialogueBox.speakingSpeed == .07f) ? 2 : (DialogueBox.speakingSpeed == .04f) ? 3 : 4);
+            PlayerPrefs.SetInt("selectedButton3", (PlayerManager.speed == 4) ? 5 : (PlayerManager.speed == 6) ? 6 : 7);
             PlayerPrefs.Save();
         }
 
@@ -53,61 +53,59 @@ public class SettingsScript : MonoBehaviour
                     GameManagerScript.speaking = hideOrShow[i].activeSelf;
                 }
             } else {
-                // Mute sound button or sound on button + Color change of selected button
+                // Mute sound button or sound on button 
                  if (gameObjectName == "soundmute"){
                     choice = 0;
                     audioSource.mute = true;
-                    spriteRenderers[0].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "soundon") {
                     choice = 1;
                     audioSource.mute = false;
-                    spriteRenderers[1].color = new Color(.6823f, .5568f, .5568f, 1);
                 } 
-                // Changing dialogue speed + Colors change of selected button
+                // Changing dialogue speed 
                 else if (gameObjectName == "dialoguespeed1") {
                     choice = 2;
                     DialogueBox.speakingSpeed = .07f;
-                    spriteRenderers[2].color = new Color(.6823f, .5568f, .5568f, 1);
 
                 } else if (gameObjectName == "dialoguespeed2") {
                     choice = 3;
                     DialogueBox.speakingSpeed = .04f;
-                    spriteRenderers[3].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "dialoguespeed3") {
                     choice = 4;
                     DialogueBox.speakingSpeed = .01f;
-                    spriteRenderers[4].color = new Color(.6823f, .5568f, .5568f, 1);
                 }
-                // Changing Walking Speed + Change color of button selected
+                // Changing Walking Speed
                 else if (gameObjectName == "walkingspeed1") {
                     choice = 5;
                     PlayerManager.speed = 4;
-                    spriteRenderers[5].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "walkingspeed2") {
                     choice = 6;
                     PlayerManager.speed = 6;
-                    spriteRenderers[6].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "walkingspeed3") {
                     choice = 7;
                     PlayerManager.speed = 8;
-                    spriteRenderers[7].color = new Color(.6823f, .5568f, .5568f, 1);
                 }}
+                // Changes color of the button to denote that it is selected.
+                spriteRenderers[choice].color = new Color(.6823f, .5568f, .5568f, 1);
+
                 // Makes all choices except the ones selected uncolored.
-                // Additionally change the selected button in selectedButtons to choice.
+                // Additionally changes selectedButtons value in slot of either sound, dialogue speed, or walking speed to value of selected button.
+                
+                // Sound mute or on buttons
                 if (choice >= 0 && choice <= 1) {
-                    selectedButtons[0] = choice;
                     for (int i = 0; i <= 1; i ++) {
                         if (i != choice)
                             spriteRenderers[i].color = Color.white;
                     }
+
+                // Dialogue speed buttons
                 } else if (choice >= 2 && choice <= 4) {
-                    selectedButtons[1] = choice;
                     for (int i = 2; i <= 4; i ++) {
                         if (i != choice)
                             spriteRenderers[i].color = Color.white;
                     }
+                
+                // Walking speed butons
                 } else if (choice >= 5 && choice <= 7) {
-                    selectedButtons[2] = choice;
                     for (int i = 5; i <= 7; i ++) {
                         if (i != choice)
                             spriteRenderers[i].color = Color.white;
