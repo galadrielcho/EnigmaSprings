@@ -63,7 +63,6 @@ public class DialogueBox : MonoBehaviour
     }
 
     IEnumerator StallTap() {
-        stall=true;
         yield return new WaitForSeconds(.5f);
         stall = false;
 
@@ -109,7 +108,6 @@ public class DialogueBox : MonoBehaviour
             // If $ - clear box
             if (c == '$') {
                 yield return new WaitUntil(() => (!stall && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)); // Wait for tap on screen
-                StartCoroutine(StallTap());
                 stop=false;
                 txt = "";
                 GameManagerScript.dialogue.text = txt;
