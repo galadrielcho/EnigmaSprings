@@ -19,14 +19,20 @@ public class NewDay : MonoBehaviour
     public GameObject nextDay;
 
     private float dist;
-    private float t = 0;
-    private bool stop = false;
+    private float t;
+    private bool stop;
+    private bool delay;
+    public static bool intro;
     
     // Update is called once per frame
     void Start() {
+        intro = true;
+        SystemText.text="";
+        delay = true;
         night.enabled = true; //Makes the start screen black.
         nextDay.SetActive(false);
-
+        stop = false;
+        t= 0;
         if (!PlayerPrefs.HasKey("intro")){
 
             skip.text = "tap anywhere to skip";
@@ -42,11 +48,12 @@ public class NewDay : MonoBehaviour
             // txt = what is typed. SystemText = the textbox used true = tells function part of intro
             PlayerPrefs.SetInt("intro", 1);
             PlayerPrefs.Save();
+            StartCoroutine("Delay");
         }
         else {
             StartCoroutine(FadeOut(false));
         }
-
+        
         if (!PlayerPrefs.HasKey("KillerSelect")) StartCoroutine("ProximityCheck");
     }
 
@@ -61,10 +68,14 @@ public class NewDay : MonoBehaviour
             StopCoroutine(DialogueBox.co);
 
         }
-         if(Input.touchCount >= 1 || Input.anyKeyDown) stop = true;
+        if(Input.touchCount >= 1 && !delay) stop = true;
 
     }
 
+    IEnumerator Delay() {
+        yield return new WaitForSeconds(.5f);
+        delay = false;
+    }
     IEnumerator ProximityCheck() {
         while (true){
             if (dist < 2 && (GameManagerScript.getTappedObject() == "interact")) {
@@ -169,6 +180,7 @@ public class NewDay : MonoBehaviour
     // Black background fades out over screen
     // intro - whether to fade out systemtext or not
     IEnumerator FadeOut(bool systemtext) {
+        intro = false;
         t = 0; //Reset counter
         while(t< 2f) {
             t += Time.deltaTime;

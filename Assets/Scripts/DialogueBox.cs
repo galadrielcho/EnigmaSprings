@@ -15,13 +15,25 @@ public class DialogueBox : MonoBehaviour
     public static Coroutine co;
     private bool stop = false;
     public GameObject interactor;
-    public static float speakingSpeed = .07f;
+    public static float speakingSpeed;
     private bool stall;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("ProximityCheck");
+    }
+    void Awake() {
+
+        speakingSpeed = PlayerPrefs.GetFloat("speakingSpeed", .07f);
+
+    }
+    void OnApplicationPause(bool pauseState){
+        if (pauseState) {
+            PlayerPrefs.SetFloat("speakingSpeed", speakingSpeed);
+            PlayerPrefs.Save();
+        }
+
     }
 
     // Can/will be replaced by whatever code we use to show that something has interacted with the player.S
