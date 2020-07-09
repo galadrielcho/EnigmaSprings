@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     Unity.2D.PixelPerfect.dll:
     - UnityEngine.U2D.PixelPerfectCamera
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -33,9 +34,11 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/KillerSelect.unity:
     - Class: 1
@@ -150,6 +153,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11300}
     - Class: 114
+      Script: {instanceID: 11348}
+    - Class: 114
       Script: {instanceID: 11392}
     - Class: 114
       Script: {instanceID: 11634}
@@ -161,6 +166,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11924}
     - Class: 114
       Script: {instanceID: 12142}
+    - Class: 114
+      Script: {instanceID: 12248}
     - Class: 114
       Script: {instanceID: 12340}
     - Class: 114
@@ -181,8 +188,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13088}
     - Class: 114
       Script: {instanceID: 13198}
-    - Class: 114
-      Script: {instanceID: 14212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -506,7 +511,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: cd617a739c8d8a3ecf89785df3123f86
+      Hash: 519b64d0a109b3cd3b7f79ebad1bb3ba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManagerScript

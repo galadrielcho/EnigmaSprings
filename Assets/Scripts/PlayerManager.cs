@@ -22,19 +22,41 @@ public class PlayerManager : MonoBehaviour
     void Awake() {
         float x =PlayerPrefs.GetFloat("x", 0f);
         float y =PlayerPrefs.GetFloat("y", 0f);
-        float z = PlayerPrefs.GetFloat("z", 0f);
-        transform.position = new Vector3(x,y,z);
+        Vector2 v = new Vector2(x,y);
+        transform.position = v;
 
 
     }
-    void onApplicationPause(bool pauseState) {
-        PlayerPrefs.SetFloat("x", transform.position.x);
-        PlayerPrefs.SetFloat("y", transform.position.y);
-        PlayerPrefs.SetFloat("z", transform.position.y);
-        PlayerPrefs.Save();
+
+    public void test() {
+                float x =PlayerPrefs.GetFloat("x", 0f);
+        float y =PlayerPrefs.GetFloat("y", 0f);
+        Vector2 v = new Vector2(x,y);
+        transform.position = v;
 
 
     }
+
+    public void save() {
+                    Debug.Log("asdf");
+
+    PlayerPrefs.SetFloat("x", transform.position.x);
+            PlayerPrefs.SetFloat("y", transform.position.y);
+            PlayerPrefs.Save();
+            Debug.Log("asdf");
+
+
+    }
+    // void onApplicationPause(bool pauseState) {
+    //     if (pauseState) {
+    //         PlayerPrefs.SetFloat("x", transform.position.x);
+    //         PlayerPrefs.SetFloat("y", transform.position.y);
+    //         PlayerPrefs.Save();
+    //     }
+  
+
+
+    // }
     void FixedUpdate()
     {
 
