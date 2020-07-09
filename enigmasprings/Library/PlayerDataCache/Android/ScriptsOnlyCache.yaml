@@ -67,23 +67,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 11654}
+      Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 11742}
+      Script: {instanceID: 11722}
     - Class: 114
-      Script: {instanceID: 11844}
+      Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 12510}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12736}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12786}
     - Class: 114
-      Script: {instanceID: 13098}
+      Script: {instanceID: 13080}
     - Class: 114
-      Script: {instanceID: 13216}
+      Script: {instanceID: 13198}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -115,6 +115,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 33
       Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
@@ -142,45 +144,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 592}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11174}
     - Class: 114
-      Script: {instanceID: 11226}
+      Script: {instanceID: 11208}
     - Class: 114
-      Script: {instanceID: 11318}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11410}
+      Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 11470}
+      Script: {instanceID: 11634}
     - Class: 114
-      Script: {instanceID: 11654}
+      Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 11844}
+      Script: {instanceID: 11852}
     - Class: 114
-      Script: {instanceID: 11872}
+      Script: {instanceID: 11924}
     - Class: 114
-      Script: {instanceID: 11944}
+      Script: {instanceID: 12142}
     - Class: 114
-      Script: {instanceID: 12162}
+      Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 12360}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12510}
+      Script: {instanceID: 12504}
     - Class: 114
-      Script: {instanceID: 12524}
+      Script: {instanceID: 12522}
     - Class: 114
-      Script: {instanceID: 12736}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 12804}
+      Script: {instanceID: 12786}
     - Class: 114
-      Script: {instanceID: 12988}
+      Script: {instanceID: 12970}
     - Class: 114
-      Script: {instanceID: 13098}
+      Script: {instanceID: 13080}
     - Class: 114
-      Script: {instanceID: 13106}
+      Script: {instanceID: 13088}
     - Class: 114
-      Script: {instanceID: 13216}
+      Script: {instanceID: 13198}
     - Class: 114
-      Script: {instanceID: 14342}
+      Script: {instanceID: 14212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -246,7 +248,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 0c01747aa0796160981552afa83326e0
+      Hash: 1f9da557d846cd6f1f7bbf8be2b39098
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NewDay
@@ -630,6 +632,12 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
+      Hash: 4e5da6740e1f45a1f6c8262323b6197e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SettingsScript
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -874,12 +882,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 4e5da6740e1f45a1f6c8262323b6197e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SettingsScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/town.unity
