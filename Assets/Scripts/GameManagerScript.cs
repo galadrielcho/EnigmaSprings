@@ -27,7 +27,6 @@ public class GameManagerScript : MonoBehaviour
 
     private Vector3 touchPosWorld;
 
- 
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +34,10 @@ public class GameManagerScript : MonoBehaviour
         dialogue = field_dialogue;
         speaker = field_speaker;
         textbox = field_textbox;
+    }
+
+    void Awake() {
+        day = PlayerPrefs.GetInt("day", 1);
     }
  
     public static void ClearTextbox() {
@@ -70,9 +73,11 @@ public class GameManagerScript : MonoBehaviour
         return tO;
     }
 
-    void settingsAppears() {
-
+    void OnApplicationPause(bool pauseState){
+        PlayerPrefs.SetInt("day", day);
+        PlayerPrefs.Save();
     }
+
 }
 
  

@@ -10,6 +10,7 @@ public class SettingsScript : MonoBehaviour
     public GameObject player;
     public string gameObjectName;
     public GameObject[] hideOrShow;
+    private int choice = -1;
     private SpriteRenderer[] spriteRenderers = new SpriteRenderer[8];
     void Start() {
         audioSource = cam.GetComponent<AudioSource>();
@@ -30,37 +31,61 @@ public class SettingsScript : MonoBehaviour
                     GameManagerScript.speaking = hideOrShow[i].activeSelf;
                 }
             } else {
-                // Mute sound button or sound on button + Colors of button
+                // Mute sound button or sound on button + Color change of selected button
                  if (gameObjectName == "soundmute"){
+                    choice = 0;
                     audioSource.mute = true;
-                    spriteRenderers[0].color = new Color(174, 142, 142);
+                    spriteRenderers[0].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "soundon") {
+                    choice = 1;
                     audioSource.mute = false;
-                    spriteRenderers[1].color = new Color(174, 142, 142);
+                    spriteRenderers[1].color = new Color(.6823f, .5568f, .5568f, 1);
                 } 
-                // Changing dialogue speed + Colors of button
+                // Changing dialogue speed + Colors change of selected button
                 else if (gameObjectName == "dialoguespeed1") {
+                    choice = 2;
                     DialogueBox.speakingSpeed = .07f;
-                    spriteRenderers[2].color = new Color(174, 142, 142);
+                    spriteRenderers[2].color = new Color(.6823f, .5568f, .5568f, 1);
 
                 } else if (gameObjectName == "dialoguespeed2") {
+                    choice = 3;
                     DialogueBox.speakingSpeed = .04f;
-                    spriteRenderers[3].color = new Color(174, 142, 142);
+                    spriteRenderers[3].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "dialoguespeed3") {
+                    choice = 4;
                     DialogueBox.speakingSpeed = .01f;
-                    spriteRenderers[4].color = new Color(174, 142, 142);
+                    spriteRenderers[4].color = new Color(.6823f, .5568f, .5568f, 1);
                 }
-                // Changing Walking Speed + Colors of button
+                // Changing Walking Speed + Change color of button selected
                 else if (gameObjectName == "walkingspeed1") {
+                    choice = 5;
                     PlayerManager.speed = 4;
-                    spriteRenderers[5].color = new Color(174, 142, 142);
+                    spriteRenderers[5].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "walkingspeed2") {
+                    choice = 6;
                     PlayerManager.speed = 7;
-                    spriteRenderers[6].color = new Color(174, 142, 142);
+                    spriteRenderers[6].color = new Color(.6823f, .5568f, .5568f, 1);
                 } else if (gameObjectName == "walkingspeed3") {
+                    choice = 7;
                     PlayerManager.speed = 10;
-                    spriteRenderers[7].color = new Color(174, 142, 142);
+                    spriteRenderers[7].color = new Color(.6823f, .5568f, .5568f, 1);
                 }}
+                if (choice >= 0 && choice <= 1) {
+                    for (int i = 0; i <= 1; i ++) {
+                        if (i != choice)
+                            spriteRenderers[i].color = Color.white;
+                    }
+                } else if (choice >= 2 && choice <= 4) {
+                    for (int i = 2; i <= 4; i ++) {
+                        if (i != choice)
+                            spriteRenderers[i].color = Color.white;
+                    }
+                } else if (choice >= 5 && choice <= 7) {
+                    for (int i = 5; i <= 7; i ++) {
+                        if (i != choice)
+                            spriteRenderers[i].color = Color.white;
+                    }
+                }
             }
         }
 
